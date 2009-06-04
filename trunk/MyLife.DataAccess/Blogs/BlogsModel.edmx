@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BlogsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2000" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="BlogsModelStoreContainer">
+          <EntitySet Name="tblBlogs_Blogrolls" EntityType="BlogsModel.Store.tblBlogs_Blogrolls" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBlogs_Blogs" EntityType="BlogsModel.Store.tblBlogs_Blogs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBlogs_Categories" EntityType="BlogsModel.Store.tblBlogs_Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBlogs_Comments" EntityType="BlogsModel.Store.tblBlogs_Comments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBlogs_Friends" EntityType="BlogsModel.Store.tblBlogs_Friends" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBlogs_Posts" EntityType="BlogsModel.Store.tblBlogs_Posts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBlogs_PostsInCategories" EntityType="BlogsModel.Store.tblBlogs_PostsInCategories" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Categories_PostsInCategories" Association="BlogsModel.Store.FK_Categories_PostsInCategories">
+            <End Role="tblBlogs_Categories" EntitySet="tblBlogs_Categories" />
+            <End Role="tblBlogs_PostsInCategories" EntitySet="tblBlogs_PostsInCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Posts_PostsInCategories" Association="BlogsModel.Store.FK_Posts_PostsInCategories">
+            <End Role="tblBlogs_Posts" EntitySet="tblBlogs_Posts" />
+            <End Role="tblBlogs_PostsInCategories" EntitySet="tblBlogs_PostsInCategories" />
+          </AssociationSet>          
+        </EntityContainer>
+        <EntityType Name="tblBlogs_Blogrolls">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="BlogId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tblBlogs_Blogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AnonymousCommentEnabled" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="DaysCommentEnabled" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ModerationCommentEnable" Type="bit" Nullable="false" />
+          <Property Name="CommentsEnabled" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="NumberOfRecentPosts" Type="int" Nullable="false" />
+          <Property Name="NumberOfRecentComments" Type="int" Nullable="false" />
+          <Property Name="PostsPerFeed" Type="int" Nullable="false" />
+          <Property Name="PostsPerPage" Type="int" Nullable="false" />
+          <Property Name="Theme" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="AboutMe" Type="ntext" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tblBlogs_Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Slug" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="BlogId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBlogs_Comments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Content" Type="ntext" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="IP" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="PostId" Type="int" Nullable="false" />
+          <Property Name="BlogId" Type="int" Nullable="false" />
+          <Property Name="Website" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tblBlogs_Friends">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Target" Type="nvarchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tblBlogs_Posts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BlogId" Type="int" Nullable="false" />
+          <Property Name="ShortContent" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Content" Type="ntext" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Published" Type="bit" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Slug" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="CommentsEnabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBlogs_PostsInCategories">
+          <Key>
+            <PropertyRef Name="PostId" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="PostId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Categories_PostsInCategories">
+          <End Role="tblBlogs_Categories" Type="BlogsModel.Store.tblBlogs_Categories" Multiplicity="1" />
+          <End Role="tblBlogs_PostsInCategories" Type="BlogsModel.Store.tblBlogs_PostsInCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBlogs_Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblBlogs_PostsInCategories">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Posts_PostsInCategories">
+          <End Role="tblBlogs_Posts" Type="BlogsModel.Store.tblBlogs_Posts" Multiplicity="1" />
+          <End Role="tblBlogs_PostsInCategories" Type="BlogsModel.Store.tblBlogs_PostsInCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBlogs_Posts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tblBlogs_PostsInCategories">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>        
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BlogsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="BlogsEntities">
+          <EntitySet Name="tblBlogs_Blogrolls" EntityType="BlogsModel.tblBlogs_Blogrolls" />
+          <EntitySet Name="tblBlogs_Blogs" EntityType="BlogsModel.tblBlogs_Blogs" />
+          <EntitySet Name="tblBlogs_Categories" EntityType="BlogsModel.tblBlogs_Categories" />
+          <EntitySet Name="tblBlogs_Comments" EntityType="BlogsModel.tblBlogs_Comments" />
+          <EntitySet Name="tblBlogs_Posts" EntityType="BlogsModel.tblBlogs_Posts" />
+          <AssociationSet Name="tblBlogs_Categories_Posts" Association="BlogsModel.tblBlogs_CategoriestblBlogs_Posts">
+            <End Role="tblBlogs_Categories" EntitySet="tblBlogs_Categories" />
+            <End Role="tblBlogs_Posts" EntitySet="tblBlogs_Posts" /></AssociationSet>
+          <EntitySet Name="tblBlogs_Friends" EntityType="BlogsModel.tblBlogs_Friends" />
+          </EntityContainer>
+        <EntityType Name="tblBlogs_Blogrolls">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BlogId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tblBlogs_Blogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="AnonymousCommentEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DaysCommentEnabled" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ModerationCommentEnable" Type="Boolean" Nullable="false" />
+          <Property Name="CommentsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NumberOfRecentPosts" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfRecentComments" Type="Int32" Nullable="false" />
+          <Property Name="PostsPerFeed" Type="Int32" Nullable="false" />
+          <Property Name="PostsPerPage" Type="Int32" Nullable="false" />
+          <Property Name="Theme" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="String" Nullable="true" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="AboutMe" Type="String" Nullable="true" MaxLength="255" /></EntityType>
+        <EntityType Name="tblBlogs_Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Slug" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="BlogId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Posts" Relationship="BlogsModel.tblBlogs_CategoriestblBlogs_Posts" FromRole="tblBlogs_Categories" ToRole="tblBlogs_Posts" /></EntityType>
+        <EntityType Name="tblBlogs_Comments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="IP" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="PostId" Type="Int32" Nullable="false" />
+          <Property Name="BlogId" Type="Int32" Nullable="false" />
+          <Property Name="Website" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          </EntityType>
+        <EntityType Name="tblBlogs_Posts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="BlogId" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ShortContent" Type="String" Nullable="true" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Published" Type="Boolean" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Slug" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="CommentsEnabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Categories" Relationship="BlogsModel.tblBlogs_CategoriestblBlogs_Posts" FromRole="tblBlogs_Posts" ToRole="tblBlogs_Categories" />
+          </EntityType>
+        <Association Name="tblBlogs_CategoriestblBlogs_Posts">
+          <End Type="BlogsModel.tblBlogs_Categories" Role="tblBlogs_Categories" Multiplicity="*" />
+          <End Type="BlogsModel.tblBlogs_Posts" Role="tblBlogs_Posts" Multiplicity="*" /></Association>
+        <EntityType Name="tblBlogs_Friends">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" />
+          <Property Name="Target" Type="String" Nullable="false" /></EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="BlogsModelStoreContainer" CdmEntityContainer="BlogsEntities">
+          <EntitySetMapping Name="tblBlogs_Blogrolls">
+            <EntityTypeMapping TypeName="IsTypeOf(BlogsModel.tblBlogs_Blogrolls)">
+              <MappingFragment StoreEntitySet="tblBlogs_Blogrolls">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBlogs_Blogs">
+            <EntityTypeMapping TypeName="IsTypeOf(BlogsModel.tblBlogs_Blogs)">
+              <MappingFragment StoreEntitySet="tblBlogs_Blogs">
+                <ScalarProperty Name="AboutMe" ColumnName="AboutMe" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AnonymousCommentEnabled" ColumnName="AnonymousCommentEnabled" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="DaysCommentEnabled" ColumnName="DaysCommentEnabled" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ModerationCommentEnable" ColumnName="ModerationCommentEnable" />
+                <ScalarProperty Name="CommentsEnabled" ColumnName="CommentsEnabled" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NumberOfRecentPosts" ColumnName="NumberOfRecentPosts" />
+                <ScalarProperty Name="NumberOfRecentComments" ColumnName="NumberOfRecentComments" />
+                <ScalarProperty Name="PostsPerFeed" ColumnName="PostsPerFeed" />
+                <ScalarProperty Name="PostsPerPage" ColumnName="PostsPerPage" />
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBlogs_Categories">
+            <EntityTypeMapping TypeName="IsTypeOf(BlogsModel.tblBlogs_Categories)">
+              <MappingFragment StoreEntitySet="tblBlogs_Categories">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBlogs_Comments">
+            <EntityTypeMapping TypeName="IsTypeOf(BlogsModel.tblBlogs_Comments)">
+              <MappingFragment StoreEntitySet="tblBlogs_Comments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBlogs_Posts">
+            <EntityTypeMapping TypeName="IsTypeOf(BlogsModel.tblBlogs_Posts)">
+              <MappingFragment StoreEntitySet="tblBlogs_Posts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ShortContent" ColumnName="ShortContent" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Published" ColumnName="Published" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Slug" ColumnName="Slug" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CommentsEnabled" ColumnName="CommentsEnabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tblBlogs_Categories_Posts" TypeName="BlogsModel.tblBlogs_CategoriestblBlogs_Posts" StoreEntitySet="tblBlogs_PostsInCategories" >
+            <EndProperty Name="tblBlogs_Posts">
+              <ScalarProperty Name="Id" ColumnName="PostId" /></EndProperty>
+            <EndProperty Name="tblBlogs_Categories">
+              <ScalarProperty Name="Id" ColumnName="CategoryId" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="tblBlogs_Friends">
+            <EntityTypeMapping TypeName="IsTypeOf(BlogsModel.tblBlogs_Friends)">
+              <MappingFragment StoreEntitySet="tblBlogs_Friends">
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="BlogsModel">
+        <EntityTypeShape EntityType="BlogsModel.tblBlogs_Blogrolls" Width="2" PointX="5.75" PointY="0.75" Height="2.2496956380208335" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogsModel.tblBlogs_Blogs" Width="1.5" PointX="0.75" PointY="5.75" Height="3.8931689453124996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogsModel.tblBlogs_Categories" Width="1.5" PointX="0.75" PointY="1.25" Height="2.4140429687499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogsModel.tblBlogs_Comments" Width="2.25" PointX="2.75" PointY="5.75" Height="3.0714322916666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="BlogsModel.tblBlogs_Posts" Width="1.5" PointX="3" PointY="1" Height="3.0714322916666661" IsExpanded="true" />
+        <AssociationConnector Association="BlogsModel.tblBlogs_CategoriestblBlogs_Posts">
+          <ConnectorPoint PointX="2.25" PointY="2.457021484375" />
+          <ConnectorPoint PointX="3" PointY="2.457021484375" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="BlogsModel.tblBlogs_Friends" Width="2.25" PointX="5.75" PointY="3.75" Height="1.592306315104167" />
+        </Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

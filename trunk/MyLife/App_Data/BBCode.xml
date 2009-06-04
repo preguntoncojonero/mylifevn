@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <tags>
+    <tag name="b" replacement="&lt;span style=&quot;font-weight:bold;&quot;&gt;{0}&lt;/span&gt;" />
+    <tag name="i" replacement="&lt;span style=&quot;font-style:italic;&quot;&gt;{0}&lt;/span&gt;" />
+    <tag name="u" replacement="&lt;span style=&quot;text-decoration:underline;&quot;&gt;{0}&lt;/span&gt;" />
+    <tag name="font" replacement="&lt;span style=&quot;font-family:{1};&quot;&gt;{0}&lt;/span&gt;" />
+    <tag name="size" replacement="&lt;span style=&quot;font-size:{1};&quot;&gt;{0}&lt;/span&gt;" />
+    <tag name="color" replacement="&lt;span style=&quot;color:{1};&quot;&gt;{0}&lt;/span&gt;" />
+    <tag name="url" replacement="&lt;a href=&quot;{1}&quot;&gt;{0}&lt;/a&gt;" alternativeReplacement="&lt;a href=&quot;{0}&quot;&gt;{0}&lt;/a&gt;" />
+    <tag name="img" replacement="&lt;img src=&quot;{0}&quot; /&gt;" />
+    <tag name="image" replacement="&lt;img src=&quot;{0}&quot; /&gt;" />
+  </tags>
+</configuration>

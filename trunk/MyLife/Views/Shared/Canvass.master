@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="MyLife.Web" %>
+<%@ Import Namespace="MyLife.Models"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title><%= ViewData[Constants.ViewData.Title] %></title>
+    <link href="/Content/Themes/MyLife/Canvass/style.css" rel="stylesheet" type="text/css" />
+    <%= Html.KeywordsMeta(MyLifeContext.Settings.Keywords) %>
+    <%= Html.DescriptionMeta(MyLifeContext.Settings.Description) %>
+    <script src="/Scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+<div id="header">
+	<h1><a href="/"><%= MyLifeContext.Settings.Name %></a></h1>
+	<p><a><%= MyLifeContext.Settings.Slogan %></a></p>
+</div>
+<div id="page">
+	<div id="content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+	</div>
+	<!-- end content -->
+	<div id="sidebar">
+		<ul>
+			<li id="menu" class="bg6">
+				<% Html.RenderPartial("Links", MyLifeContext.Current.User); %>
+			</li>
+			<li class="news">
+				<% Html.RenderPartialIfNotNull("News", ViewData["News"]); %>
+			</li>
+			<li id="archives">
+				<h2 class="bg3">Archives</h2>
+				<ul>
+					<li class="first"><a href="#">June 2007</a> <i>(2)</i></li>
+					<li><a href="#">May 2007</a> <i>(31)</i></li>
+					<li><a href="#">April 2007</a> <i>(30)</i></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<div id="footer">
+	<p id="legal"><strong>Canvass</strong> &copy; 2007. Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
+	<p id="links"> <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+</div>
+<!-- end footer -->
+<%= Html.GoogleAnalytics() %>
+</body>
+</html>

@@ -1,0 +1,324 @@
+﻿/*
+	Design by Free CSS Templates
+	http://www.freecsstemplates.org
+	Released for free under a Creative Commons Attribution 2.5 License
+*/
+@import url("../../Common.css");
+@import url("friends.css");
+@import url("moneybox.css");
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF url(img01.gif) repeat-x;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #666666;
+}
+h1, h2, h3 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #000000;
+}
+h1 {
+	font-weight: normal;
+	font-size: 237%;
+}
+a {
+	border-bottom: 1px dotted #CCCCCC;
+	text-decoration: none;
+	color: #1777B1;
+}
+a:hover {
+	border-bottom: none;
+	color: #FF7400;
+}
+img {
+	border: 3px solid #7F7772;
+}
+img.left {
+	float: left;
+	margin: 6px 15px 0 0;
+	border: none;
+}
+img.right {
+	float: right;
+	margin: 6px 0 0 15px;
+}
+.bg1 { background: url(img04.gif) no-repeat left bottom; }
+.bg3 { background: url(img06.gif) no-repeat left bottom; }
+.bg6 { background: url(img10.gif) no-repeat right bottom; }
+.bg7 { background: url(img11.gif) no-repeat right bottom; }
+.feature {
+}
+.feature .image {
+	padding: 0 0 0 40px;
+}
+.feature .title {
+}
+.feature .content {
+	padding: 0 0 0 40px;
+}
+.box {
+	float: left;
+	width: 250px;
+}
+.box .title {
+	height: 40px;
+	padding: 20px 0 0 40px;
+	text-transform: lowercase;
+	font-size: 167%;
+}
+.box .content {
+}
+.list {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+.list li {
+	padding-left: 10px;
+	background: url(img07.gif) no-repeat left center;
+}
+#header {
+	width: 760px;
+	height: 150px;
+	margin: 0 auto;
+	background: url(img02.gif) no-repeat;
+}
+#header h1, #header p {
+	margin: 0;
+	margin: 0;
+	font-weight: normal;
+	color: #000000;
+}
+#header h1 {
+	float: left;
+	padding: 58px 0 0 12px;
+	text-transform: lowercase;
+	line-height: 72px;
+	font-size: 72px;
+}
+#header p {
+	float: right;
+	padding: 102px 0 0 0;
+	text-transform: uppercase;
+	font: bold 11px "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#header p a {
+	font-size: 167%;
+}
+#header a {
+	border: none;
+	color: #000000;
+}
+#page {
+	width: 760px;
+	margin: 0 auto;
+}
+#content {
+	float: right;
+	width: 519px;
+}
+#content p, #content ul, #content ol {
+	line-height: 1.8em;
+}
+#sidebar {
+	float: left;
+	width: 200px;
+	padding: 0 20px 0 0;
+	border-right: 1px dotted #DCDCDC;
+}
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#sidebar li {
+}
+#sidebar li ul {
+}
+#sidebar li li {
+	padding: 5px 10px;
+	background: url(img07.gif) no-repeat 0 10px;
+	border-top: 1px dotted #DCDCDC;
+}
+#sidebar li li.first {
+	border-top-color: #FFFFFF;
+}
+#sidebar h2 {
+	height: 40px;
+	padding: 20px 0 0 40px;
+	text-transform: lowercase;
+	font-size: 167%;
+}
+#sidebar a {
+	border: none;
+}
+#sidebar a:hover {
+	border-bottom: 1px dotted #666666;
+}
+#sidebar .news h2
+{
+	background: url(img05.gif) no-repeat left bottom;
+}
+#footer {
+	clear: both;
+	height: 150px;
+	padding: 20px 0 0 0;
+	background: #000000;
+}
+#footer p {
+	background: #000000;
+	margin: 0;
+	text-align: center;
+	font-size: 85%;
+}
+#footer a {
+	border: none;
+	color: #CCCCCC;
+}
+#footer a:hover {
+	color: #FFFFFF;
+}
+#legal {
+}
+#legal strong {
+	display: block;
+	padding: 20px 0 0 0;
+	background: url(img12.gif) no-repeat center top;
+	text-transform: lowercase;
+	letter-spacing: 3px;
+	font-size: 182%;
+	font-weight: normal;
+}
+#links {
+}
+.newest-users
+{
+}
+.newest-users h2
+{
+	background: url(img08.gif) no-repeat left bottom;
+	height: 40px;
+	padding: 20px 0 0 40px;
+	text-transform: lowercase;
+	font-size: 167%;
+}
+.newest-users ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.newest-users li
+{	
+}
+.newest-users img
+{
+	border: none;
+	float: left;
+	margin-right: 5px;
+	width: 64px;
+	height: 64px;
+}
+.newest-users p
+{
+	font-weight: bold;
+}
+.newest-users p span
+{
+	display: block;
+	font-weight: normal;
+}
+.newest-users a
+{
+	text-decoration: none;
+	border: none;
+}
+.recent-posts
+{
+}
+.recent-posts h2
+{
+	background: url(img09.gif) no-repeat left bottom;
+	height: 40px;
+	padding: 20px 0 0 40px;
+	text-transform: lowercase;
+	font-size: 167%;
+}
+.recent-posts ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.recent-posts li
+{
+	padding: 0px 0px 0px 18px;
+	background: url(bullet_star.png) no-repeat 1px 5px;
+}
+.recent-posts a
+{
+	text-decoration: none;
+	border: none;
+}
+
+/*
+	News
+*/
+.news
+{
+}
+.news fieldset
+{
+	border: none;
+}
+.news legend
+{
+	font-size: 18px;
+}
+
+.personal
+{
+}
+.personal h2
+{
+}
+.personal ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.personal li
+{
+	padding: 0px 0px 0px 18px;
+	background: url(bullet_star.png) no-repeat 1px 3px;
+}
+.personal a
+{
+	text-decoration: none;
+	border: none;
+}
+
+.blog-tools
+{
+}
+.blog-tools h2
+{
+}
+.blog-tools ul
+{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.blog-tools li
+{
+	padding: 0px 0px 0px 18px;
+	background: url(bullet_star.png) no-repeat 1px 3px;
+}
+.blog-tools a
+{
+	text-decoration: none;
+	border: none;
+}

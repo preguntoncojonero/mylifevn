@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B31F8D16-C7C2-4E00-AA79-99A49487A9E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyLife</RootNamespace>
+    <AssemblyName>MyLife.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CookComputing.XmlRpcV2, Version=2.3.2.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System.Web.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System.Web.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xVal, Version=0.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\xVal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collection\ContainerCollection.cs" />
+    <Compile Include="Configuration\BlogsConfiguration.cs" />
+    <Compile Include="Configuration\ConfigurationElementBase.cs" />
+    <Compile Include="Configuration\FriendsConfiguration.cs" />
+    <Compile Include="Configuration\MimeTypesConfiguration.cs" />
+    <Compile Include="Configuration\LinksConfiguration.cs" />
+    <Compile Include="Configuration\MoneyBoxConfiguration.cs" />
+    <Compile Include="Configuration\NewsConfiguration.cs" />
+    <Compile Include="Configuration\StorageConfiguration.cs" />
+    <Compile Include="Configuration\ThemesConfiguration.cs" />
+    <Compile Include="MyLifeContext.cs" />
+    <Compile Include="MyLifeException.cs" />
+    <Compile Include="Net\Mail\IMailTemplate.cs" />
+    <Compile Include="Net\Mail\IMAP\ConnectionState.cs" />
+    <Compile Include="Net\Mail\IMAP\ImapClient.cs" />
+    <Compile Include="Net\Mail\IMAP\ImapConnectionException.cs" />
+    <Compile Include="Net\Mail\IMAP\ImapException.cs" />
+    <Compile Include="Net\Mail\IMAP\LoginType.cs" />
+    <Compile Include="Net\Mail\IMAP\MailMessageCollection.cs" />
+    <Compile Include="Net\Mail\XmlMailTemplate.cs" />
+    <Compile Include="Net\Mime\AttachmentMimeEntity.cs" />
+    <Compile Include="Net\Mime\ContentTransferEncoding.cs" />
+    <Compile Include="Net\Mime\IMimeEntity.cs" />
+    <Compile Include="Net\Mime\IMimeParser.cs" />
+    <Compile Include="Net\Mime\MediaType.cs" />
+    <Compile Include="Net\Mime\MimeEncoding.cs" />
+    <Compile Include="Net\Mime\MimeEntity.cs" />
+    <Compile Include="Net\Mime\MimeEntityBase.cs" />
+    <Compile Include="Net\Mime\MimeEntityCollection.cs" />
+    <Compile Include="Net\Mime\MimeUtilities.cs" />
+    <Compile Include="Net\Mime\MultipartMimeEntity.cs" />
+    <Compile Include="Net\Mime\RegexMimeParser.cs" />
+    <Compile Include="Net\Mime\TextMimeEntity.cs" />
+    <Compile Include="Net\WindowsLive\WindowsLiveLogin.cs" />
+    <Compile Include="Security\Cryptography\ActivationHashProvider.cs" />
+    <Compile Include="Serialization\NonUnicodeEncoding.cs" />
+    <Compile Include="Serialization\ShortGuid.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Validation\DataAnnotationsValidationRunner.cs" />
+    <Compile Include="Web\Blogs\Blog.cs" />
+    <Compile Include="Web\Blogs\Blogroll.cs" />
+    <Compile Include="Web\Blogs\CommentOptions.cs" />
+    <Compile Include="Web\Blogs\BlogsProvider.cs" />
+    <Compile Include="Web\Blogs\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Blogs\MetaWeblog\IMetaWeblog.cs" />
+    <Compile Include="Web\Blogs\MetaWeblog\MetaWebLogApi.cs" />
+    <Compile Include="Collection\SmartCollection.cs" />
+    <Compile Include="Configuration\MyLifeSection.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Linq\Extensions.cs" />
+    <Compile Include="Net\IP\BitVector.cs" />
+    <Compile Include="Net\IP\BitVectorReader.cs" />
+    <Compile Include="Net\IP\BitVectorTrie.cs" />
+    <Compile Include="Net\IP\Countries.cs" />
+    <Compile Include="Net\IP\IPToCountry.cs" />
+    <Compile Include="Net\Mail\SendMail.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\Base64Serializer.cs" />
+    <Compile Include="Web\Schedulers\ClearTemporaryFilesTask.cs" />
+    <Compile Include="Web\DynamicData\DynamicChoiceFieldAttribute.cs" />
+    <Compile Include="Web\DynamicData\DynamicFieldAttribute.cs" />
+    <Compile Include="Web\DynamicData\DynamicForm.cs" />
+    <Compile Include="Web\DynamicData\DynamicIdentityFieldAttribute.cs" />
+    <Compile Include="Web\DynamicData\DynamicTextFieldAttribute.cs" />
+    <Compile Include="Web\DynamicData\Extensions.cs" />
+    <Compile Include="Web\Extensions.cs" />
+    <Compile Include="Web\Friends\Friend.cs" />
+    <Compile Include="Web\Friends\FriendsProvider.cs" />
+    <Compile Include="Web\Friends\Group.cs" />
+    <Compile Include="Web\HtmlTextRender.cs" />
+    <Compile Include="Web\HttpHandlers\DynamicHtmlHandler.cs" />
+    <Compile Include="Web\HttpHandlers\JavascriptHandler.cs" />
+    <Compile Include="Web\HttpHandlers\SilverlightXapHandler.cs" />
+    <Compile Include="Web\Links\Link.cs" />
+    <Compile Include="Web\Links\LinksProvider.cs" />
+    <Compile Include="Web\MoneyBox\Category.cs" />
+    <Compile Include="Web\MoneyBox\Record.cs" />
+    <Compile Include="Web\MoneyBox\MoneyBoxProvider.cs" />
+    <Compile Include="Web\Mvc\Extensions.cs" />
+    <Compile Include="Web\Mvc\AvatarResult.cs" />
+    <Compile Include="Web\Mvc\MyLifeValidateAntiForgeryTokenAttribute.cs" />
+    <Compile Include="Web\Plugins\Extensions.cs" />
+    <Compile Include="Web\Profile\MyLifeProfile.cs" />
+    <Compile Include="Web\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Web\Mvc\CompressedFilterAttribute.cs" />
+    <Compile Include="Web\News\News.cs" />
+    <Compile Include="Web\News\NewsProvider.cs" />
+    <Compile Include="Web\Plugins\Emoticons\Emoticon.cs" />
+    <Compile Include="Web\Plugins\Emoticons\Emoticons.cs" />
+    <Compile Include="Web\Rss\DBBool.cs" />
+    <Compile Include="Web\Rss\ExceptionCollection.cs" />
+    <Compile Include="Web\Rss\RssCategory.cs" />
+    <Compile Include="Web\Rss\RssCategoryCollection.cs" />
+    <Compile Include="Web\Rss\RssChannelCollection.cs" />
+    <Compile Include="Web\Rss\RssCloudProtocol.cs" />
+    <Compile Include="Web\Rss\RssDefault.cs" />
+    <Compile Include="Web\Rss\RssElement.cs" />
+    <Compile Include="Web\Rss\RssFeedCollection.cs" />
+    <Compile Include="Web\Rss\RssItemCollection.cs" />
+    <Compile Include="Web\Rss\RssModuleCollection.cs" />
+    <Compile Include="Web\Rss\RssModuleItemCollection.cs" />
+    <Compile Include="Web\Rss\RssModuleItemCollectionCollection.cs" />
+    <Compile Include="Web\Rss\RssChannel.cs" />
+    <Compile Include="Web\Rss\RssCloud.cs" />
+    <Compile Include="Web\Rss\RssImage.cs" />
+    <Compile Include="Web\Rss\RssTextInput.cs" />
+    <Compile Include="Web\Rss\RssFeed.cs" />
+    <Compile Include="Web\Rss\RssEnclosure.cs" />
+    <Compile Include="Web\Rss\RssGuid.cs" />
+    <Compile Include="Web\Rss\RssItem.cs" />
+    <Compile Include="Web\Rss\RssSource.cs" />
+    <Compile Include="Web\Rss\RssModule.cs" />
+    <Compile Include="Web\Rss\RssModuleItem.cs" />
+    <Compile Include="Web\Rss\RssReader.cs" />
+    <Compile Include="Web\Rss\RssVersion.cs" />
+    <Compile Include="Web\Rss\RssWriter.cs" />
+    <Compile Include="Web\Schedulers\Task.cs" />
+    <Compile Include="Web\Schedulers\TaskScheduler.cs" />
+    <Compile Include="Web\Security\MyLifeSecurityException.cs" />
+    <Compile Include="Validation\Validates.cs" />
+    <Compile Include="Web\ServiceManager.cs" />
+    <Compile Include="Web\Storage\HardDiskStorageProvider.cs" />
+    <Compile Include="Web\Storage\StorageProvider.cs" />
+    <Compile Include="Web\Security\SecUtility.cs" />
+    <Compile Include="Web\BizObject.cs" />
+    <Compile Include="Web\Blogs\Category.cs" />
+    <Compile Include="Web\Blogs\Comment.cs" />
+    <Compile Include="Web\Blogs\Post.cs" />
+    <Compile Include="Web\Blogs\PostOptions.cs" />
+    <Compile Include="Web\UrlRewriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\Blogs\Messages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Web\Messages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Net\WindowsLive\SkyDrive\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

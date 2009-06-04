@@ -1,0 +1,415 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DC3FB90-3FAE-4E86-A4AA-0BC9ABAC22A3}</ProjectGuid>
+    <ProjectTypeGuids>{603c0e0b-db56-11dc-be95-000d561079b0};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyLife</RootNamespace>
+    <AssemblyName>MyLife</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SilverlightApplicationList>{E39CDA9C-A7A6-4FB3-827A-1B13B2B1190B}|..\MyLife.Silverlight.MoneyBoxCharts\MyLife.Silverlight.MoneyBoxCharts.csproj|ClientBin|False</SilverlightApplicationList>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebug, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\RouteDebug.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC CodePlex Preview 5\Assemblies\System.Web.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC CodePlex Preview 5\Assemblies\System.Web.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Silverlight, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="xVal, Version=0.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\xVal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BlogsController.cs" />
+    <Compile Include="Controllers\FriendsController.cs" />
+    <Compile Include="Controllers\MoneyBoxController.cs" />
+    <Compile Include="Controllers\MyLifeController.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUpload.ashx.cs">
+      <DependentUpon>FileUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AjaxModel.cs" />
+    <Compile Include="Models\MoneyBoxModel.cs" />
+    <Compile Include="Models\PagedModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MyLife\MyLifeSettings.aspx.cs">
+      <DependentUpon>MyLifeSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MyLife\MyLifeSettings.aspx.designer.cs">
+      <DependentUpon>MyLifeSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyLife\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MyLife\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyLife.Core\MyLife.Core.csproj">
+      <Project>{B31F8D16-C7C2-4E00-AA79-99A49487A9E0}</Project>
+      <Name>MyLife.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyLife.DataAccess\MyLife.DataAccess.csproj">
+      <Project>{1B2B3FE6-088C-4262-848C-CD5141FEA57F}</Project>
+      <Name>MyLife.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\BlockUsers.txt" />
+    <Content Include="App_Data\Activation.xml" />
+    <Content Include="Views\MyLife\Activation.aspx" />
+    <Content Include="Views\MyLife\Login.aspx" />
+    <Content Include="Views\MyLife\Register.aspx" />
+    <Content Include="wlwmanifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Notes.txt" />
+    <Content Include="App_Data\ResetPassword.xml" />
+    <Content Include="Default.aspx" />
+    <Content Include="Views\MyLife\ChangePassword.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\BBCode.xml" />
+    <Content Include="App_Data\Cities.xml" />
+    <Content Include="App_Data\Register.xml" />
+    <Content Include="ClientBin\MoneyBoxCharts.xap" />
+    <Content Include="Content\Themes\colorpicker.css" />
+    <Content Include="Content\Themes\Images\button.gif" />
+    <Content Include="Content\Themes\Images\ColorPicker\blank.gif" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_background.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_hex.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_hsb_b.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_hsb_h.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_hsb_s.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_indic.gif" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_overlay.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_rgb_b.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_rgb_g.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_rgb_r.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_select.gif" />
+    <Content Include="Content\Themes\Images\ColorPicker\colorpicker_submit.png" />
+    <Content Include="Content\Themes\Images\ColorPicker\slider.png" />
+    <Content Include="Content\Themes\MyLife\Canvass\moneybox.css" />
+    <Content Include="Content\Themes\Blogs\dfBlog\bg-head.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\bg-page.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\blank.gif" />
+    <Content Include="Content\Themes\Blogs\dfBlog\box-search.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\dfBlog.css" />
+    <Content Include="Content\Themes\Blogs\dfBlog\external.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\footer-bg.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\gototop.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\head-bg.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\home.gif" />
+    <Content Include="Content\Themes\Blogs\dfBlog\icons-hover.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\icons-normal.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\logo.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\mn-background.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\notice.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\post-label.gif" />
+    <Content Include="Content\Themes\Blogs\dfBlog\quote.png" />
+    <Content Include="Content\Themes\Blogs\dfBlog\reset.css" />
+    <Content Include="Content\Themes\Blogs\dfBlog\template.css" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typography.css" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_arrow-big.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_arrow.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_check-big.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_check.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_cross-big.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_cross.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_error.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_light-big.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_light.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_note.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_star-big.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_star.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\typo_success.jpg" />
+    <Content Include="Content\Themes\Blogs\dfBlog\wrap-bg.png" />
+    <Content Include="Icons\accept.png" />
+    <Content Include="Icons\add.gif" />
+    <Content Include="Icons\add.png" />
+    <Content Include="Icons\ajaxLoading.gif" />
+    <Content Include="Icons\cake.png" />
+    <Content Include="Icons\close.gif" />
+    <Content Include="Icons\close.png" />
+    <Content Include="Icons\control-first.png" />
+    <Content Include="Icons\control-last.png" />
+    <Content Include="Icons\control-next.png" />
+    <Content Include="Icons\control-previous.png" />
+    <Content Include="Icons\copy.png" />
+    <Content Include="Icons\cross.png" />
+    <Content Include="Icons\cut.png" />
+    <Content Include="Icons\delete.png" />
+    <Content Include="Icons\download.gif" />
+    <Content Include="Icons\edit.png" />
+    <Content Include="Icons\graph-bar.png" />
+    <Content Include="Icons\graph-pie.png" />
+    <Content Include="Icons\send-email.png" />
+    <Content Include="Icons\female.png" />
+    <Content Include="Icons\folder.png" />
+    <Content Include="Icons\comment.gif" />
+    <Content Include="Icons\group-add.png" />
+    <Content Include="Icons\key.png" />
+    <Content Include="Icons\male.png" />
+    <Content Include="Icons\paste.png" />
+    <Content Include="Icons\properties.png" />
+    <Content Include="Icons\rename.png" />
+    <Content Include="Icons\rss-go.png" />
+    <Content Include="Icons\save.png" />
+    <Content Include="Icons\friend-add.png" />
+    <Content Include="Icons\skype.png" />
+    <Content Include="Icons\upload.gif" />
+    <Content Include="Icons\user.png" />
+    <Content Include="Icons\yahoo.png" />
+    <Content Include="Images\avatar.png" />
+    <Content Include="Scripts\colorpicker.js" />
+    <Content Include="Scripts\Controllers\BaseController.js" />
+    <Content Include="Scripts\Controllers\BlogsController.js" />
+    <Content Include="Scripts\Controllers\FriendsController.js" />
+    <Content Include="Scripts\Controllers\MoneyBoxController.js" />
+    <Content Include="Scripts\Controllers\MyLifeController.js" />
+    <Content Include="Scripts\ControlsToolkit.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Content\DynamicHtml\border-radius.htc" />
+    <Content Include="Scripts\Format.js" />
+    <Content Include="Scripts\jquery.autogrow.js" />
+    <Content Include="Scripts\jquery.contextMenu.js" />
+    <Content Include="Scripts\jquery.json-1.3.min.js" />
+    <Content Include="Scripts\taffy-min.js" />
+    <Content Include="Scripts\Visifire2.js" />
+    <Content Include="Scripts\XTemplate.js" />
+    <Content Include="Content\Styles\Blogs\iNove\bg.jpg" />
+    <Content Include="Content\Styles\Blogs\iNove\blockquote.gif" />
+    <Content Include="Content\Styles\Blogs\iNove\feeds.gif" />
+    <Content Include="Content\Styles\Blogs\iNove\header_footer.jpg" />
+    <Content Include="Content\Styles\Blogs\iNove\icons.gif" />
+    <Content Include="Content\Styles\Blogs\iNove\light.gif" />
+    <Content Include="Content\Styles\Blogs\iNove\menu.gif" />
+    <Content Include="Content\Styles\Blogs\iNove\sidesep.gif" />
+    <Content Include="Content\Styles\Blogs\iNove\style.css" />
+    <Content Include="Content\Styles\Blogs\iNove\textfield.gif" />
+    <Content Include="Content\Styles\Blogs\iNove\widgetsep.png" />
+    <Content Include="Content\Styles\Blogs\iNove\wp-logo.png" />
+    <Content Include="Content\Themes\Images\add.png" />
+    <Content Include="Content\Themes\Images\bg.gif" />
+    <Content Include="Content\Themes\Images\bg_header.jpg" />
+    <Content Include="Content\Themes\Images\btn-sprite.gif" />
+    <Content Include="Content\Themes\Images\ddn.png" />
+    <Content Include="Content\Themes\Images\delete.png" />
+    <Content Include="Content\Themes\Images\dn.png" />
+    <Content Include="Content\Themes\Images\fhbg.gif" />
+    <Content Include="Content\Themes\Images\first.gif" />
+    <Content Include="Content\Themes\Images\grid-header-back.gif" />
+    <Content Include="FileUpload.ashx" />
+    <None Include="Home.key" />
+    <None Include="MyLifeVn.key" />
+    <Content Include="TinyMCE\tiny_mce_gzip.aspx" />
+    <Content Include="Views\Blogs\dfBlog.master" />
+    <Content Include="Images\life-small.jpg" />
+    <Content Include="Images\life.jpg" />
+    <Content Include="Scripts\jquery.metadata.pack.js" />
+    <Content Include="Scripts\jquery.validate.pack.js" />
+    <Content Include="Scripts\xVal.jquery.validate.js" />
+    <Content Include="Content\Themes\Images\current-bg.gif" />
+    <Content Include="Content\Themes\Images\hl.png" />
+    <Content Include="Content\Themes\Images\last.gif" />
+    <Content Include="Content\Themes\Images\line.gif" />
+    <Content Include="Content\Themes\Images\load.gif" />
+    <Content Include="Content\Themes\Images\load.png" />
+    <Content Include="Content\Themes\Images\magnifier.png" />
+    <Content Include="Content\Themes\Images\menu-bg.gif" />
+    <Content Include="Content\Themes\Images\next.gif" />
+    <Content Include="Content\Themes\Images\prev.gif" />
+    <Content Include="Content\Themes\Images\up.png" />
+    <Content Include="Content\Themes\Images\uup.png" />
+    <Content Include="Content\Themes\Images\wbg.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\bullet_star.png" />
+    <Content Include="Content\Themes\MyLife\Canvass\friends.css" />
+    <Content Include="Content\Themes\MyLife\Canvass\pencil.png" />
+    <Content Include="Images\sign-up-now.jpg" />
+    <Content Include="Content\Themes\MyLife\Canvass\img01.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img02.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img03.jpg" />
+    <Content Include="Content\Themes\MyLife\Canvass\img04.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img05.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img06.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img07.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img08.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img09.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img10.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img11.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\img12.gif" />
+    <Content Include="Content\Themes\MyLife\Canvass\spacer.gif" />
+    <Content Include="Silverlight.js" />
+    <Content Include="Views\Blogs\Comments.ascx" />
+    <Content Include="Views\Blogs\PostDetails.ascx" />
+    <Content Include="Views\Blogs\RecentComments.ascx" />
+    <Content Include="Views\Blogs\RecentPosts.ascx" />
+    <Content Include="Views\Blogs\UpdateStatus.ascx" />
+    <Content Include="Views\MoneyBox\Default.aspx" />
+    <Content Include="Views\MyLife\BlogTools.ascx" />
+    <Content Include="Views\MyLife\Explore.aspx" />
+    <Content Include="Views\Shared\Links.ascx" />
+    <Content Include="Views\MyLife\NewestUsers.ascx" />
+    <Content Include="Views\MyLife\News.ascx" />
+    <Content Include="Views\MyLife\Personal.ascx" />
+    <Content Include="Views\MyLife\RecentPosts.ascx" />
+    <Content Include="Views\Shared\Canvass.master" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Content\Themes\Common.css" />
+    <Content Include="Content\Themes\MyLife\Canvass\style.css" />
+    <Content Include="Views\Blogs\iNove.master" />
+    <Content Include="Views\Blogs\WaterColor.master" />
+    <Content Include="Views\Friends\Default.aspx" />
+    <Content Include="Views\MyLife\Avatar.aspx" />
+    <Content Include="Views\MyLife\Contact.aspx" />
+    <Content Include="Views\MyLife\MyLife.aspx" />
+    <Content Include="Views\MyLife\MyLifeSettings.aspx" />
+    <Content Include="Views\MyLife\NewsDetails.aspx" />
+    <Content Include="Views\MyLife\Profile.aspx" />
+    <Content Include="Views\MyLife\SendMail.aspx" />
+    <Content Include="Views\MyLife\Settings.aspx" />
+    <Content Include="TinyMCE\tiny_mce_popup.js" />
+    <Content Include="robots.txt" />
+    <Content Include="TinyMCE\tiny_mce.js" />
+    <Content Include="TinyMCE\tiny_mce_gzip.js" />
+    <Content Include="Views\Blogs\AddComment.ascx" />
+    <Content Include="Views\Blogs\ImportRss.aspx" />
+    <Content Include="Views\Blogs\Post.aspx" />
+    <Content Include="Views\Blogs\PostEditor.aspx" />
+    <Content Include="Views\Blogs\Posts.aspx" />
+    <Content Include="Views\Blogs\Settings.aspx" />
+    <Content Include="Views\MyLife\Home.aspx" />
+    <Content Include="Views\MyLife\ResetPassword.aspx" />
+    <Content Include="Views\Shared\ErrorMessage.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Uploads\Avatars\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2008</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

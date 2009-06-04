@@ -1,0 +1,92 @@
+/*---------------------------------------------------------------- 
+  Copyright: 
+  Copyright (C) 2009 danielfajardo web
+  
+  License: 
+  GPL Software 
+  
+  Author: 
+  danielfajardo - http: //wwww.danielfajardo.com
+---------------------------------------------------------------- */
+
+/* Template structure
+
+	body
+		page
+			wrapper -> width: 940px;
+				header
+					head
+					mainmenu
+					search
+				wrap
+					container
+						content
+						sidebar
+				bottom
+					footer
+*/
+
+
+/* Template. Main areas
+***************************************************************************** */
+
+body {
+	margin: 0;
+}
+#page {
+}
+#wrapper {
+	width: 940px;
+	margin: 0 auto;
+	}
+	#header {
+			height: 210px;
+	}
+		#head {
+			height: 210px;
+		}
+		#menubar {
+			position: absolute;
+			float: left;
+			top: 102px;
+			width: 590px;
+			height: 60px;
+			margin: 0 40px 0 77px;
+			}
+			#mainmenu {
+			}
+		#search {
+			position: absolute;
+			float: right;
+			top: 102px;
+			width: 190px;
+			margin-top: 64px; /* 37px; */
+			margin-left: 710px;
+		}
+	#wrap {
+		}
+		#container {
+			margin: 0 40px 0 20px;
+			}
+			#content {
+				width: 640px;
+				float: left;
+				margin-top: 0;
+				margin-right: 30px;
+				padding: 5px;
+			}
+			#sidebar {
+				width: 190px;
+				float: right;	
+				margin: 12px 0;
+			}
+	#bottom {
+		clear: both !important;
+		height: 140px;
+		padding: 10px 20px 0;
+	}
+		#footer { 
+			margin: 0 260px 0 50px;
+			padding: 7px 0;
+			border-top: 1px solid #cdd;
+		}
