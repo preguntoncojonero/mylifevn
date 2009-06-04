@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLife", "MyLife\MyLife.csproj", "{4DC3FB90-3FAE-4E86-A4AA-0BC9ABAC22A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLife.Core", "MyLife.Core\MyLife.Core.csproj", "{B31F8D16-C7C2-4E00-AA79-99A49487A9E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLife.DataAccess", "MyLife.DataAccess\MyLife.DataAccess.csproj", "{1B2B3FE6-088C-4262-848C-CD5141FEA57F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLife.Silverlight.MoneyBoxCharts", "MyLife.Silverlight.MoneyBoxCharts\MyLife.Silverlight.MoneyBoxCharts.csproj", "{E39CDA9C-A7A6-4FB3-827A-1B13B2B1190B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight Application", "Silverlight Application", "{732215AA-D395-4BB5-B79D-3A9184F2C395}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{4149134E-5B01-4E7C-9A70-4F2DABD65093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImapUnitTest", "ImapUnitTest\ImapUnitTest.csproj", "{2395CF2F-47F5-42D4-82AD-DE3B032FAB84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLife.FilesOnline", "MyLife.FilesOnline\MyLife.FilesOnline.csproj", "{DE18E320-979B-4D9D-9591-8872A050B950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesOnlineTest", "FilesOnlineTest\FilesOnlineTest.csproj", "{81CE4BDC-3F75-4074-B58F-0475CF2B16BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DC3FB90-3FAE-4E86-A4AA-0BC9ABAC22A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC3FB90-3FAE-4E86-A4AA-0BC9ABAC22A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC3FB90-3FAE-4E86-A4AA-0BC9ABAC22A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC3FB90-3FAE-4E86-A4AA-0BC9ABAC22A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31F8D16-C7C2-4E00-AA79-99A49487A9E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31F8D16-C7C2-4E00-AA79-99A49487A9E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31F8D16-C7C2-4E00-AA79-99A49487A9E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31F8D16-C7C2-4E00-AA79-99A49487A9E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2B3FE6-088C-4262-848C-CD5141FEA57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2B3FE6-088C-4262-848C-CD5141FEA57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2B3FE6-088C-4262-848C-CD5141FEA57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2B3FE6-088C-4262-848C-CD5141FEA57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E39CDA9C-A7A6-4FB3-827A-1B13B2B1190B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E39CDA9C-A7A6-4FB3-827A-1B13B2B1190B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E39CDA9C-A7A6-4FB3-827A-1B13B2B1190B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E39CDA9C-A7A6-4FB3-827A-1B13B2B1190B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2395CF2F-47F5-42D4-82AD-DE3B032FAB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2395CF2F-47F5-42D4-82AD-DE3B032FAB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2395CF2F-47F5-42D4-82AD-DE3B032FAB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2395CF2F-47F5-42D4-82AD-DE3B032FAB84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE18E320-979B-4D9D-9591-8872A050B950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE18E320-979B-4D9D-9591-8872A050B950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE18E320-979B-4D9D-9591-8872A050B950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE18E320-979B-4D9D-9591-8872A050B950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CE4BDC-3F75-4074-B58F-0475CF2B16BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CE4BDC-3F75-4074-B58F-0475CF2B16BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CE4BDC-3F75-4074-B58F-0475CF2B16BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CE4BDC-3F75-4074-B58F-0475CF2B16BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E39CDA9C-A7A6-4FB3-827A-1B13B2B1190B} = {732215AA-D395-4BB5-B79D-3A9184F2C395}
+		{2395CF2F-47F5-42D4-82AD-DE3B032FAB84} = {4149134E-5B01-4E7C-9A70-4F2DABD65093}
+		{81CE4BDC-3F75-4074-B58F-0475CF2B16BC} = {4149134E-5B01-4E7C-9A70-4F2DABD65093}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = 
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

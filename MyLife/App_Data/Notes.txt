@@ -1,0 +1,2 @@
+﻿Server Information:
+	- Working directory: C:\Websites\mylifevn.net\wwwroot\

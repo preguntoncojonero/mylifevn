@@ -1,0 +1,7 @@
+﻿User-agent: *
+Disallow: /login
+Disallow: /register
+Disallow: /resetpassword
+Disallow: /activation
+Disallow: /changepassword
+Sitemap: http://www.mylifevn.com/sitemap

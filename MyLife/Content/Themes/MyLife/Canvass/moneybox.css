@@ -1,0 +1,25 @@
+﻿/*
+	Button Icons
+*/
+a.categories
+{
+	background: transparent url("/Icons/properties.png") no-repeat 0px -1px;
+	padding-left: 18px;
+}
+a.pie
+{
+	background: transparent url("/Icons/graph-pie.png") no-repeat 0px -1px;
+	padding-left: 18px;
+}
+a.balance
+{
+	background: transparent url("/Icons/graph-bar.png") no-repeat 0px -1px;
+	padding-left: 18px;
+}
+input.colorSelector
+{
+	width: 36px !important;
+	border: solid 2px #DCDFE4;
+	cursor: pointer;
+	background-color: #0a0a0a;
+}

@@ -1,0 +1,440 @@
+﻿.alignright, .alignleft {
+	padding: 0;
+	margin: 6px 20px 10px 20px;
+	display: inline;
+}
+
+.alignright {
+	float:right;
+}
+
+.alignleft {
+	float:left;
+}
+/*
+	Css Form
+*/
+.cssform
+{
+}
+.cssform div
+{
+	margin: 0px;
+	padding: 5px 0px 5px 0px;
+	clear: both;
+}
+.cssform div.buttons
+{
+	padding-left: 150px;
+}
+.cssform fieldset
+{
+	border: none;
+}
+.cssform h2
+{
+	font-size: 18px;
+}
+.cssform img
+{
+	border: none;
+}
+.cssform label
+{
+	float: left;
+	width: 150px;
+}
+.cssform input[type='text'], input[type='password']
+{
+	width: 200px;
+}
+.cssform input[type='checkbox']
+{
+	border: none;	
+}
+.cssform input[disabled='disabled']
+{
+	background-color: #EBEBE4;
+	border: solid 1px #7F9DB9;
+	height: 18px;
+}
+.cssform textarea
+{
+	width: 300px;
+	height: 70px;
+}
+.cssform select
+{
+	width: 205px;
+}
+.cssform span.error
+{
+	color: #CC0000;
+	display: block;
+	width: auto;
+	text-align: left;
+	margin-left: 150px;
+	font-size: 11px;
+	margin-top: 5px;
+}
+.cssform .notes
+{
+	font-size: 11px;
+}
+.cssform span.notes
+{
+	margin-left: 150px;
+}
+.cssform span.content
+{
+}
+.cssform ul.checkboxlist
+{
+	list-style: none;
+	padding: 0px;
+	margin-left: 150px;
+	clear: both;
+	overflow: visible;
+}
+.cssform .checkboxlist li
+{	
+	width: 49%;
+	padding: 3px 0px 3px 0px;
+	display: block;
+	float: left;
+}
+.cssform .checkboxlist input
+{
+	margin-right: 5px;
+	border: none;
+}
+.cssform .required
+{
+	font-weight: bold;
+	color: red;
+}
+.cssform .noborder
+{
+	border: none !important;
+}
+a.button
+{
+	font-family: Verdana; 
+	font-size: 12px;
+	color: #555555;
+	font-weight: bold;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	margin-right: 10px;
+}
+a:hover.button
+{
+	color: #0066CC;
+	text-decoration: none;
+}
+a.add
+{
+	padding-left: 18px;
+	background: transparent url("/Icons/add.png") no-repeat 0px -1px;
+}
+a.edit
+{
+	background: transparent url("/Icons/add.gif") no-repeat 0px 0px;
+	padding-left: 18px;
+}
+a.delete
+{
+	background: transparent url("/Icons/delete.png") no-repeat 0px -1px;
+	padding-left: 18px;
+}
+a.cancel
+{
+	background: transparent url("/Icons/cross.png") no-repeat 0px -1px;
+	padding-left: 18px;
+}
+a.user
+{
+	background: transparent url("/Icons/user.png") no-repeat 0px -1px;
+	padding-left: 18px;
+}
+span.download
+{
+	background: transparent url("/Icons/download.gif") no-repeat 10px 8px;
+	text-indent: 30px;
+	display: block;	
+}
+span.upload
+{
+	background: transparent url("/Icons/upload.gif") no-repeat 10px 8px;
+	text-indent: 30px;
+	display: block;	
+}
+.rss-import
+{
+	padding: 2px 0px 2px 20px;
+	background: transparent url("/Icons/rss-go.png") no-repeat;
+}
+.send-mail
+{
+	padding: 2px 0px 2px 20px;
+	background: transparent url("/Icons/send-email.png") no-repeat;
+}
+
+/*
+	CssMenu
+*/
+.cssmenu
+{
+	width: 100%;
+	height: 43px;
+	background: #FFF url("Images/menu-bg.gif") top left repeat-x;
+	font-size: 12px;
+	font-family: "Lucida Grande" , Verdana, sans-serif;
+	font-weight: bold;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.cssmenu li
+{
+	display: block;
+	float: left;
+	margin: 0 0 0 5px;
+}
+.cssmenu a
+{
+	height: 43px;
+	color: #777;
+	text-decoration: none;
+	display: block;
+	float: left;
+	line-height: 200%;
+	padding: 8px 15px 0;
+	border: none;
+}
+.cssmenu a:hover
+{
+	color: #333;
+}
+.cssmenu a.current
+{
+	color: #FFF;
+	background: #FFF url("Images/current-bg.gif") top left repeat-x;
+	padding: 5px 15px 0;
+}
+
+.clear
+{
+	clear: both;
+}
+
+/*
+	Css Table
+*/
+.csstable
+{
+	font: bold 11px "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #C1DAD7;
+}
+.csstable th
+{
+	color: #4f6b72;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #CAE8EA url(images/bg_header.jpg) no-repeat;
+}
+.csstable th.nobg
+{
+	border-top: 0;
+	border-left: 0;
+	border-right: 1px solid #C1DAD7;
+	background: none;
+}
+.csstable td
+{
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #4f6b72;
+	font-size: 11px;
+}
+.csstable td.alt
+{
+	background: #F5FAFA;
+	color: #797268;
+}
+
+/*
+	Page Navigator
+*/
+.page-navigator {
+	clear: both;
+	margin: 0px;
+	width: 100%;
+	height: 22px;
+	font-size: 1.0em;
+	border: 1px solid #dee;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #f1f9f9;
+	}
+	.page-navigator a,
+	.page-navigator span.current { margin: 0 .75em 0 0; padding: 3px .25em; }
+	.page-navigator a.page       {}
+	.page-navigator span.current { color: #be261e; font-weight: bold; }
+	.page-navigator a.first      {}
+	.page-navigator a.last       {}
+	.page-navigator span.extend  {}
+	.page-navigator span.pages   {}
+
+/*
+	Context Menu
+*/
+.contextMenu
+{
+	position: absolute;
+	width: 120px;
+	z-index: 99999;
+	border: solid 1px #ccc;
+	background: #eee;
+	padding: 0px;
+	margin: 0px;
+	display: none;
+}
+.contextMenu li
+{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+.contextMenu a
+{
+	color: #333;
+	text-decoration: none;
+	display: block;
+	line-height: 20px;
+	height: 20px;
+	background-position: 6px center;
+	background-repeat: no-repeat;
+	outline: none;
+	padding: 1px 5px;
+	padding-left: 28px;
+}
+.contextMenu li.hover a
+{
+	color: #fff;
+	background-color: #3399ff;
+}
+.contextMenu li.disabled a
+{
+	color: #aaa;
+	cursor: default;
+}
+.contextMenu li.hover.disabled a
+{
+	background-color: transparent;
+}
+.contextMenu li.separator
+{
+	border-top: solid 1px #ccc;
+}
+.contextMenu li.edit a
+{
+	background-image: url(/Icons/edit.png);
+}
+.contextMenu li.open a
+{
+	background-image: url(/Icons/folder.png);
+}
+.contextMenu li.rename a
+{
+	background-image: url(/Icons/edit.png);
+}
+.contextMenu li.delete a
+{
+	background-image: url(/Icons/delete.png);
+}
+.contextMenu li.mail a
+{
+	background-image: url(/Icons/send-email.png);
+}
+.contextMenu li.cut a
+{
+	background-image: url(images/cut.png);
+}
+.contextMenu li.copy a
+{
+	background-image: url(images/page_white_copy.png);
+}
+.contextMenu li.paste a
+{
+	background-image: url(images/page_white_paste.png);
+}
+.contextMenu li.quit a
+{
+	background-image: url(images/door.png);
+}
+/*
+	Ajax Loading
+*/
+.ajaxLoading
+{
+	border: solid 1px #DD0000;
+	text-align: center;
+	display: block;
+	width: 200px;
+	padding: 55px 20px 5px 20px;
+	background: #FFFFE1 url(/Icons/ajaxLoading.gif) no-repeat center 5px;
+	font-weight: bold;
+}
+/*
+	Explore
+*/
+.explore
+{
+	width: 100%;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	overflow: auto;
+}
+.explore li
+{
+	width: 49%;
+	display: block;
+	float: left;
+	list-style: none;
+	margin: 0px;
+	padding: 10px 0px 10px 0px;
+}
+.explore img
+{
+	border: none;
+	width: 70px;
+	height: 70px;
+	float: left;
+	margin-right: 5px;
+}
+.explore p
+{
+	margin: 0px;
+	padding: 0px;
+}
+.explore a
+{
+	text-decoration: none;
+	border: none;
+}
+.explore span
+{
+	display: block;
+	padding: 0px;
+	margin: 0px;
+}

@@ -1,0 +1,267 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MyLife.Web.Blogs.BlogsViewMasterPageBase" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+    <title><%= ViewData[Constants.ViewData.Title] %></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/Content/Themes/Blogs/WaterColor/WaterColor.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://demo.themespreview.com/wp-content/plugins/wp-pagenavi/pagenavi-css.css" type="text/css" media="screen" />
+    <script src="/Content/Scripts/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<div id="base_top"><div id="base_bottom">
+	<div id="base">
+		<div id="header">
+			<div id="blogtitle"><%= Html.ActionLink(Model.Name, "Posts", new { indexOfPage = 1 })%></div>
+			<div id="subtitle"><%= Model.Description %></div>
+			<div id="menu"><ul><li class="page_item page-item-2"><a href="http://demo.themespreview.com/?page_id=2" title="Page 1">Page 1</a></li>
+<li class="page_item page-item-11"><a href="http://demo.themespreview.com/?page_id=11" title="Page 2">Page 2</a></li>
+			</ul></div>
+			<div id="mainsearch">
+				<form id="mainsearchform" action="http://demo.themespreview.com/" method="get">
+				<input class="input" type="text" value="Keyword" onfocus="if (this.value == 'Keyword') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Keyword';}" name="s" id="s" />
+				<input class="submit" value="" type="submit"/>
+				</form>
+			</div>
+			<a href="http://demo.themespreview.com/" title="Home"><img src="http://demo.themespreview.com/wp-content/themes/002/watercolor/images/spacer.gif" alt="Home" class="home"/></a>
+			<a href="http://demo.themespreview.com/?feed=rss2" title="RSS Feed"><img src="http://demo.themespreview.com/wp-content/themes/002/watercolor/images/spacer.gif" alt="Subscribe RSS" class="rss"/></a>
+		</div>
+		<div id="container"><div id="content">
+<div class="spacer">&nbsp;</div>			<div id="post-22" class="post hentry category-uncategorized tag-image post">
+				<div class="date">
+					<div class="date_m">Dec</div>
+					<div class="date_d">01</div>
+				</div>
+				<div class="title"><a href="http://demo.themespreview.com/?p=22" rel="bookmark" title="Permanent Link to An image in a post">An image in a post</a></div>
+				<div class="author"><a href="http://demo.themespreview.com/?author=1" title="Posts by admin">admin</a> </div>
+				<div class="entry">
+					<div id="attachment_23" class="wp-caption alignleft" style="width: 310px"><img class="size-medium wp-image-23 " title="Image Title" src="http://demo.themespreview.com/wp-content/uploads/2008/10/flower.jpg" alt="Butterfly" width="300" height="225" /><p class="wp-caption-text">Image Caption</p></div>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque sed felis.  Aliquam sit amet felis. Mauris semper, velit semper laoreet dictum, quam diam  dictum urna, nec placerat elit nisl in quam. Etiam augue pede, molestie eget,  rhoncus at, convallis ut, eros. Aliquam pharetra. Nulla in tellus eget odio  sagittis blandit. Maecenas at nisl. Nullam lorem mi, eleifend a, fringilla vel,  semper at, ligula. Mauris eu wisi. Ut ante dui, aliquet nec, congue non,  accumsan sit amet, lectus. Mauris et mauris. Duis sed massa id mauris pretium  venenatis. Suspendisse cursus velit vel ligula. Mauris elit. Donec neque.  Phasellus nec sapien quis pede facilisis suscipit. Aenean quis risus sit amet  eros volutpat ullamcorper. Ut a mi. Etiam nulla. Mauris interdum.</p>
+				</div>
+				<div class="clear"></div>
+				<div class="info">
+					<span class="category">Category: <a href="http://demo.themespreview.com/?cat=1" title="View all posts in Uncategorized" rel="category">Uncategorized</a></span>
+					&nbsp;<span class="tags">Tags: <a href="http://demo.themespreview.com/?tag=image" rel="tag">Image</a></span>					&nbsp;<span class="bubble"><a href="http://demo.themespreview.com/?p=22#comments" title="Comment on An image in a post">2 Comments</a></span>
+				</div>
+			</div>
+			<div class="post_bottom"></div>
+			<div id="post-20" class="post hentry category-uncategorized tag-blockquotes post">
+				<div class="date">
+					<div class="date_m">Nov</div>
+					<div class="date_d">01</div>
+				</div>
+				<div class="title"><a href="http://demo.themespreview.com/?p=20" rel="bookmark" title="Permanent Link to Blockquotes galore">Blockquotes galore</a></div>
+				<div class="author"><a href="http://demo.themespreview.com/?author=1" title="Posts by admin">admin</a> </div>
+				<div class="entry">
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque sed felis. Aliquam sit amet felis. Mauris semper, velit semper laoreet dictum, quam diam dictum urna, nec placerat elit nisl in quam. Etiam augue pede, molestie eget, rhoncus at, convallis ut, eros. Aliquam pharetra. Nulla in tellus eget odio sagittis blandit. Maecenas at nisl. Nullam lorem mi, eleifend a, fringilla vel, semper at, ligula. Mauris eu wisi. Ut ante dui, aliquet nec, congue non, accumsan sit amet, lectus. Mauris et mauris. Duis sed massa id mauris pretium venenatis. Suspendisse cursus velit vel ligula. Mauris elit. Donec neque. Phasellus nec sapien quis pede facilisis suscipit. Aenean quis risus sit amet eros volutpat ullamcorper. Ut a mi. Etiam nulla. Mauris interdum.</p>
+<p>With some blockquotes too of course…</p>
+<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque sed felis. Aliquam sit amet felis. Mauris semper, velit semper laoreet dictum, quam diam dictum urna, nec placerat elit nisl in quam. Etiam augue pede, molestie eget, rhoncus at, convallis ut, eros. Aliquam pharetra. Nulla in tellus eget odio sagittis blandit. Maecenas at nisl. Nullam lorem mi, eleifend a, fringilla vel, semper at, ligula. Mauris eu wisi. Ut ante dui, aliquet nec, congue non, accumsan sit amet, lectus. Mauris et mauris. Duis sed massa id mauris pretium venenatis. Suspendisse cursus velit vel ligula. Mauris elit. Donec neque. Phasellus nec sapien quis pede facilisis suscipit. Aenean quis risus sit amet eros volutpat ullamcorper. Ut a mi. Etiam nulla. Mauris interdum.</p></blockquote>
+<p>and a suggestion by Steve Cooley for a blockquote within a blockquote:</p>
+<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque sed felis. Aliquam sit amet felis. Mauris semper, velit semper laoreet dictum, quam diam dictum urna, nec placerat elit nisl in quam. Etiam augue pede, molestie eget, rhoncus at, convallis ut, eros. Aliquam pharetra.</p>
+<blockquote><p>This is a blockquote within a blockquote</p></blockquote>
+<p>Nulla in tellus eget odio sagittis blandit. Maecenas at nisl. Nullam lorem mi, eleifend a, fringilla vel, semper at, ligula. Mauris eu wisi. Ut ante dui, aliquet nec, congue non, accumsan sit amet, lectus. Mauris et mauris. Duis sed massa id mauris pretium venenatis. Suspendisse cursus velit vel ligula. Mauris elit. Donec neque. Phasellus nec sapien quis pede facilisis suscipit. Aenean quis risus sit amet eros volutpat ullamcorper. Ut a mi. Etiam nulla. Mauris interdum.</p></blockquote>
+				</div>
+				<div class="clear"></div>
+				<div class="info">
+					<span class="category">Category: <a href="http://demo.themespreview.com/?cat=1" title="View all posts in Uncategorized" rel="category">Uncategorized</a></span>
+					&nbsp;<span class="tags">Tags: <a href="http://demo.themespreview.com/?tag=blockquotes" rel="tag">Blockquotes</a></span>					&nbsp;<span class="bubble"><a href="http://demo.themespreview.com/?p=20#respond" title="Comment on Blockquotes galore">Leave a Comment</a></span>
+				</div>
+			</div>
+			<div class="post_bottom"></div>
+			<div id="post-18" class="post hentry category-uncategorized tag-more-tag post">
+				<div class="date">
+					<div class="date_m">Oct</div>
+					<div class="date_d">20</div>
+				</div>
+				<div class="title"><a href="http://demo.themespreview.com/?p=18" rel="bookmark" title="Permanent Link to How the  &#8216;more&#8217; tag works">How the  &#8216;more&#8217; tag works</a></div>
+				<div class="author"><a href="http://demo.themespreview.com/?author=1" title="Posts by admin">admin</a> </div>
+				<div class="entry">
+					<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque sed felis. Aliquam sit amet felis. Mauris semper, velit semper laoreet dictum, quam diam dictum urna, nec placerat elit nisl in quam. Etiam augue pede, molestie eget, rhoncus at, convallis ut, eros. Aliquam pharetra. Nulla in tellus eget odio sagittis blandit. Maecenas at nisl. Nullam lorem mi, eleifend a, fringilla vel, semper at, ligula. Mauris eu wisi. Ut ante dui, aliquet nec, congue non, accumsan sit amet, lectus. Mauris et mauris. Duis sed massa id mauris pretium venenatis. Suspendisse cursus velit vel ligula. Mauris elit. Donec neque. Phasellus nec sapien quis pede facilisis suscipit. Aenean quis risus sit amet eros volutpat ullamcorper. Ut a mi. Etiam nulla. Mauris interdum.</p>
+<p>Below is &#8216;more&#8217; tag</p>
+<p> <a href="http://demo.themespreview.com/?p=18#more-18" class="more-link">more&#8230;</a></p>
+				</div>
+				<div class="clear"></div>
+				<div class="info">
+					<span class="category">Category: <a href="http://demo.themespreview.com/?cat=1" title="View all posts in Uncategorized" rel="category">Uncategorized</a></span>
+					&nbsp;<span class="tags">Tags: <a href="http://demo.themespreview.com/?tag=more-tag" rel="tag">more tag</a></span>					&nbsp;<span class="bubble"><a href="http://demo.themespreview.com/?p=18#respond" title="Comment on How the  &#8216;more&#8217; tag works">Leave a Comment</a></span>
+				</div>
+			</div>
+			<div class="post_bottom"></div>
+			<div id="post-16" class="post hentry category-child-4-under-child-3 category-child-5-under-category-c category-uncategorized post">
+				<div class="date">
+					<div class="date_m">Oct</div>
+					<div class="date_d">20</div>
+				</div>
+				<div class="title"><a href="http://demo.themespreview.com/?p=16" rel="bookmark" title="Permanent Link to Order or Unorder - you decide">Order or Unorder - you decide</a></div>
+				<div class="author"><a href="http://demo.themespreview.com/?author=1" title="Posts by admin">admin</a> </div>
+				<div class="entry">
+					<p>A post with lists [just for Alphoide] <img src='http://demo.themespreview.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p><strong>Unordered List</strong></p>
+<ul>
+<li>Item one</li>
+<li>Item two</li>
+</ul>
+<p><strong>Ordered List</strong></p>
+<ol>
+<li>Item one</li>
+<li>Item two</li>
+</ol>
+				</div>
+				<div class="clear"></div>
+				<div class="info">
+					<span class="category">Category: <a href="http://demo.themespreview.com/?cat=9" title="View all posts in Child 4 under Child 3" rel="category">Child 4 under Child 3</a>,  <a href="http://demo.themespreview.com/?cat=10" title="View all posts in Child 5 under Category C" rel="category">Child 5 under Category C</a>,  <a href="http://demo.themespreview.com/?cat=1" title="View all posts in Uncategorized" rel="category">Uncategorized</a></span>
+										&nbsp;<span class="bubble"><a href="http://demo.themespreview.com/?p=16#respond" title="Comment on Order or Unorder - you decide">Leave a Comment</a></span>
+				</div>
+			</div>
+			<div class="post_bottom"></div>
+			<div id="post-14" class="post hentry category-uncategorized post">
+				<div class="date">
+					<div class="date_m">Oct</div>
+					<div class="date_d">20</div>
+				</div>
+				<div class="title"><a href="http://demo.themespreview.com/?p=14" rel="bookmark" title="Permanent Link to A post with links and 3 pages within">A post with links and 3 pages within</a></div>
+				<div class="author"><a href="http://demo.themespreview.com/?author=1" title="Posts by admin">admin</a> </div>
+				<div class="entry">
+					<p>A link to the <a href="http://codex.wordpress.org/">codex</a> combined with a link to the <a href="http://themes.wordpress.net/">theme viewer</a> and perhaps a link to <a href="http://wordpress.org/">wordpress.org</a></p>
+				</div>
+				<div class="clear"></div>
+				<div class="info">
+					<span class="category">Category: <a href="http://demo.themespreview.com/?cat=1" title="View all posts in Uncategorized" rel="category">Uncategorized</a></span>
+										&nbsp;<span class="bubble"><a href="http://demo.themespreview.com/?p=14#respond" title="Comment on A post with links and 3 pages within">Leave a Comment</a></span>
+				</div>
+			</div>
+			<div class="post_bottom"></div>
+			<div id="post-7" class="post hentry category-child-1-under-category-a category-child-2-under-category-a category-child-3-under-category-b post">
+				<div class="date">
+					<div class="date_m">Oct</div>
+					<div class="date_d">20</div>
+				</div>
+				<div class="title"><a href="http://demo.themespreview.com/?p=7" rel="bookmark" title="Permanent Link to An example of child categories">An example of child categories</a></div>
+				<div class="author"><a href="http://demo.themespreview.com/?author=1" title="Posts by admin">admin</a> </div>
+				<div class="entry">
+					<p>This is posted in the 3 child categories which sit under the parent categories of A and B</p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque sed felis. Aliquam sit amet felis. Mauris semper, velit semper laoreet dictum, quam diam dictum urna, nec placerat elit nisl in quam. Etiam augue pede, molestie eget, rhoncus at, convallis ut, eros. Aliquam pharetra. Nulla in tellus eget odio sagittis blandit. Maecenas at nisl. Nullam lorem mi, eleifend a, fringilla vel, semper at, ligula. Mauris eu wisi. Ut ante dui, aliquet nec, congue non, accumsan sit amet, lectus. Mauris et mauris. Duis sed massa id mauris pretium venenatis. Suspendisse cursus velit vel ligula. Mauris elit. Donec neque. Phasellus nec sapien quis pede facilisis suscipit. Aenean quis risus sit amet eros volutpat ullamcorper. Ut a mi. Etiam nulla. Mauris interdum.</p>
+				</div>
+				<div class="clear"></div>
+				<div class="info">
+					<span class="category">Category: <a href="http://demo.themespreview.com/?cat=6" title="View all posts in Child 1 under Category A" rel="category">Child 1 under Category A</a>,  <a href="http://demo.themespreview.com/?cat=7" title="View all posts in Child 2 under Category A" rel="category">Child 2 under Category A</a>,  <a href="http://demo.themespreview.com/?cat=8" title="View all posts in Child 3 under Category B" rel="category">Child 3 under Category B</a></span>
+										&nbsp;<span class="bubble"><a href="http://demo.themespreview.com/?p=7#respond" title="Comment on An example of child categories">Leave a Comment</a></span>
+				</div>
+			</div>
+			<div class="post_bottom"></div>
+			<div id="post-1" class="post hentry category-uncategorized post">
+				<div class="date">
+					<div class="date_m">Oct</div>
+					<div class="date_d">16</div>
+				</div>
+				<div class="title"><a href="http://demo.themespreview.com/?p=1" rel="bookmark" title="Permanent Link to Hello world!">Hello world!</a></div>
+				<div class="author"><a href="http://demo.themespreview.com/?author=1" title="Posts by admin">admin</a> </div>
+				<div class="entry">
+					<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>
+				</div>
+				<div class="clear"></div>
+				<div class="info">
+					<span class="category">Category: <a href="http://demo.themespreview.com/?cat=1" title="View all posts in Uncategorized" rel="category">Uncategorized</a></span>
+										&nbsp;<span class="bubble"><a href="http://demo.themespreview.com/?p=1#comments" title="Comment on Hello world!">One Comment</a></span>
+				</div>
+			</div>
+			<div class="post_bottom"></div>
+
+		<div class="navigation">
+			<div class="alignleft"><a href="http://demo.themespreview.com/?wptheme=002%2Fwatercolor&#038;paged=2" >&laquo; Previous Entries</a></div>
+			<div class="alignright"></div>
+		</div>
+</div>
+<div id="sidebar"><ul>
+	<li class="pagenav"><h1>Pages</h1><ul><li class="page_item page-item-2"><a href="http://demo.themespreview.com/?page_id=2" title="Page 1">Page 1</a>
+<ul>
+	<li class="page_item page-item-5"><a href="http://demo.themespreview.com/?page_id=5" title="Page (lv2)">Page (lv2)</a>
+	<ul>
+		<li class="page_item page-item-8"><a href="http://demo.themespreview.com/?page_id=8" title="Page Child (lv3)">Page Child (lv3)</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="page_item page-item-11"><a href="http://demo.themespreview.com/?page_id=11" title="Page 2">Page 2</a></li>
+</ul></li>		
+	<li class="categories"><h1>Categories</h1><ul>	<li class="cat-item cat-item-3"><a href="http://demo.themespreview.com/?cat=3" title="View all posts filed under Category A">Category A</a> (1)
+<ul class='children'>
+	<li class="cat-item cat-item-6"><a href="http://demo.themespreview.com/?cat=6" title="View all posts filed under Child 1 under Category A">Child 1 under Category A</a> (1)
+</li>
+	<li class="cat-item cat-item-7"><a href="http://demo.themespreview.com/?cat=7" title="View all posts filed under Child 2 under Category A">Child 2 under Category A</a> (1)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://demo.themespreview.com/?cat=4" title="View all posts filed under Category B">Category B</a> (2)
+<ul class='children'>
+	<li class="cat-item cat-item-8"><a href="http://demo.themespreview.com/?cat=8" title="View all posts filed under Child 3 under Category B">Child 3 under Category B</a> (2)
+	<ul class='children'>
+	<li class="cat-item cat-item-9"><a href="http://demo.themespreview.com/?cat=9" title="View all posts filed under Child 4 under Child 3">Child 4 under Child 3</a> (1)
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://demo.themespreview.com/?cat=5" title="View all posts filed under Category C">Category C</a> (1)
+<ul class='children'>
+	<li class="cat-item cat-item-10"><a href="http://demo.themespreview.com/?cat=10" title="View all posts filed under Child 5 under Category C">Child 5 under Category C</a> (1)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://demo.themespreview.com/?cat=1" title="View all posts filed under Uncategorized">Uncategorized</a> (7)
+</li>
+</ul></li>
+	<li>
+		<h1>Archives</h1>
+		<ul>	<li><a href='http://demo.themespreview.com/?m=200812' title='December 2008'>December 2008</a></li>
+	<li><a href='http://demo.themespreview.com/?m=200811' title='November 2008'>November 2008</a></li>
+	<li><a href='http://demo.themespreview.com/?m=200810' title='October 2008'>October 2008</a></li>
+</ul>
+	</li>
+
+	
+				
+			<li><h1>Tag Cloud</h1><div style="padding:5px 2px 5px 2px;"><a href='http://demo.themespreview.com/?tag=blockquotes' class='tag-link-12' title='1 topic' style='font-size: 10px;'>Blockquotes</a>
+<a href='http://demo.themespreview.com/?tag=html' class='tag-link-14' title='1 topic' style='font-size: 10px;'>HTML</a>
+<a href='http://demo.themespreview.com/?tag=image' class='tag-link-13' title='1 topic' style='font-size: 10px;'>Image</a>
+<a href='http://demo.themespreview.com/?tag=more-tag' class='tag-link-11' title='1 topic' style='font-size: 10px;'>more tag</a></div></li>
+
+	<li id="linkcat-2" class="linkcat"><h1>Blogroll</h1>
+	<ul class='xoxo blogroll'>
+<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+<li><a href="http://wordpress.org/support/">Support Forum</a></li>
+<li><a href="http://wordpress.org/development/">Development Blog</a></li>
+<li><a href="http://codex.wordpress.org/">Documentation</a></li>
+<li><a href="http://wordpress.org/extend/ideas/">Suggest Ideas</a></li>
+<li><a href="http://www.nattywp.com/">Site templates</a></li>
+<li><a href="http://www.templatelite.com/">Wordpress Themes</a></li>
+<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+
+	</ul>
+</li>
+
+	<li><h1>Meta</h1>
+		<ul>
+						<li><a href="http://demo.themespreview.com/wp-login.php">Log in</a></li>
+			<li><a href="http://demo.themespreview.com/?feed=rss2" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://demo.themespreview.com/?feed=comments-rss2" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+			<li><a href="http://www.hostrefer.com/" title="Web Hosting Directory">Web Hosting Refer</a></li><li><a href="http://www.hostpulse.com/" title="dedicated server">Dedicated Server</a></li>		</ul>
+	</li>
+
+</ul></div>			<div class="clear"></div>
+		</div>
+		<div id="footer">
+			<div id="flickrrss"><a href="http://www.flickr.com/photos/themespreview/3063348522/" title="1053619B"><img src="http://farm4.static.flickr.com/3135/3063348522_db68befaa8_s.jpg" alt="1053619B" /></a><a href="http://www.flickr.com/photos/themespreview/3063346260/" title="show_preview"><img src="http://farm4.static.flickr.com/3001/3063346260_eb6c477e42_s.jpg" alt="show_preview" /></a><a href="http://www.flickr.com/photos/themespreview/3062508803/" title="木蘭花"><img src="http://farm4.static.flickr.com/3070/3062508803_8172005785_s.jpg" alt="木蘭花" /></a><a href="http://www.flickr.com/photos/themespreview/3063345966/" title="f061"><img src="http://farm4.static.flickr.com/3219/3063345966_728658dda5_s.jpg" alt="f061" /></a><a href="http://www.flickr.com/photos/themespreview/3062508521/" title="200372017493042199"><img src="http://farm4.static.flickr.com/3145/3062508521_c87f7ae46c_s.jpg" alt="200372017493042199" /></a>			</div>
+		&copy; 2009 - WP Themes Preview is proudly powered by <a href="http://wordpress.org/">WordPress</a> | <a href="http://www.themespreview.com/">Wordpress Themes</a><br/>
+			<!-- credit -->
+			Designed by <a href="http://www.templatelite.com/">Wordpress Templates</a>		
+		</div>
+	</div>
+</div></div>
+</body>
+</html>

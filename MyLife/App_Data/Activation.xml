@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MailTemplate>
+  <Subject>MyLifeVn.Com: Kích hoạt tài khoản</Subject>  
+  <Body>
+    <![CDATA[
+    Chào bạn ##UserName##!<br/>
+    Bạn đã đăng ký tài khoản mới tại MyLifeVn.Com.<br/>
+    Bạn hãy click vào đây để kích hoạt tài khoản: <a href="http://www.mylifevn.com/activation">http://www.mylifevn.com/activation</a><br/>
+    Tên tài khoản: ##UserName##<br/>
+    Mã kích hoạt: ##ActivationKey##<br/>
+    Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!
+  ]]></Body>
+</MailTemplate>

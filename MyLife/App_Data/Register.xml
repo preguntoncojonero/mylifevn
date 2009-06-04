@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MailTemplate>
+    <Subject>MyLifeVn.Com: Đăng ký tài khoản</Subject>
+    <Body>
+    <![CDATA[
+    <html>
+        <body>
+            Chào bạn ##UserName##!<br/>
+            Bạn đã đăng ký tài khoản mới tại MyLifeVn.Com.<br/>
+            Tên tài khoản: ##UserName##<br/>
+            Mật khẩu: ##Password##<br/>
+            Bạn có thể đăng nhập qua đường link sau: <a href="http://www.mylifevn.com/login">http://www.mylifevn.com/login</a><br/>
+            Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!
+        </body>
+    </html>    
+    ]]>
+    </Body>
+</MailTemplate>
