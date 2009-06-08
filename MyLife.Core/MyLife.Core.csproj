@@ -144,6 +144,7 @@
     <Compile Include="Net\Mime\TextMimeEntity.cs" />
     <Compile Include="Net\WindowsLive\WindowsLiveLogin.cs" />
     <Compile Include="Security\Cryptography\ActivationHashProvider.cs" />
+    <Compile Include="Serialization\ImageBase64Serializer.cs" />
     <Compile Include="Serialization\NonUnicodeEncoding.cs" />
     <Compile Include="Serialization\ShortGuid.cs" />
     <Compile Include="Utils.cs" />

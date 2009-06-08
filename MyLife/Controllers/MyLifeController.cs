@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -361,6 +363,13 @@ namespace MyLife.Controllers
 
             ViewData[Constants.ViewData.Title] = "MyLife - Liên hệ";
             return View("Contact", MyLifeContext.Settings.Theme);
+        }
+
+        public ActionResult Test()
+        {
+            var image = Image.FromFile("D:\\Pictures\\Nghiand.jpg");
+            var str = MyLife.Serialization.ImageBase64Serializer.BuildImageTag(image, ImageFormat.Jpeg);
+            return Content(str);
         }
 
         #region News
