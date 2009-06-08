@@ -4,6 +4,6 @@
 <h2>Tin tức mới</h2>
 <ul>
     <% foreach (var news in Model) { %>
-        <li><%= news.CreatedDate.ToString("dd/MM") %>&nbsp;<%= Html.Link(news.Title, news.ToUri()) %></li>
+        <li><%= news.CreatedDate.ToString("dd/MM") %>&nbsp;<%= Html.Link(news.Title, news.RelativeUrl) %></li>
     <% } %>
 </ul>
