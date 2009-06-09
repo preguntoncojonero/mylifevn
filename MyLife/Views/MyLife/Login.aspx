@@ -6,6 +6,7 @@
 <asp:Content ContentPlaceHolderID="HeadContent" runat="server">
     <script type="text/javascript" src="/Scripts/jquery.validate.pack.js"></script>
     <script type="text/javascript" src="/Scripts/xVal.jquery.validate.js"></script>
+    <script type="text/javascript" src="/Scripts/ControlsToolkit.js"></script>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
@@ -25,6 +26,7 @@
                 <%= Html.Hidden("ReturnUrl", Request.QueryString["ReturnUrl"])%>
                 <a class="button user" id="btnLogin">Đăng nhập</a>
             </div>
+            <div id="divMessageBox"></div>
             <div>
                 <a href="/resetpassword">Bạn quên mật khẩu?</a><br />
                 <a href="/register">Bạn chưa đăng ký tài khoản?</a>
@@ -34,8 +36,9 @@
     </div>
     
     <script type="text/javascript">
-        var controller;
+        var msg;
         $(document).ready(function() {
+            msg = new MessageBox("divMessageBox");
             $("#btnLogin").click(function() {
                 login();
                 return false;
@@ -55,13 +58,17 @@
             }
             var action = self.attr('action');
             var data = self.serialize();
+            $("#fLogin div.buttons").hide();
+            msg.showWait("Đang kết nối tới máy chủ, bạn hãy đợi trong giây lát");
             $.post(action, data, function(result) {
                 if (result.Status) {
+                    msg.showInfo(result.Message);
                     window.location = result.RedirectUrl;
                 } else {
-                    alert(result.Message);
+                    $("#fLogin div.buttons").show();
+                    msg.showError(result.Message);
                 }
-            }, "json");        
+            }, "json");
         }
     </script>
 </asp:Content>
