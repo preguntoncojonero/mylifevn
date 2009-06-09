@@ -438,3 +438,33 @@ span.upload
 	padding: 0px;
 	margin: 0px;
 }
+
+/*
+	Message Box
+*/
+.message-box
+{
+	margin: 0px;
+	height: 32px;
+	vertical-align: middle;
+	line-height: 32px;
+	padding: 2px 2px 2px 40px !important;
+}
+.message-box-info
+{
+}
+.message-box-wait
+{
+	background: #FFFFCC url("/Content/Icons/ajax-preloaders.gif") no-repeat 2px 2px;
+	border: solid 1px #DEDEDE;
+}
+.message-box-error
+{
+	background: #F6CBCA url("/Content/Icons/error.png") no-repeat 2px 2px;
+	border: solid 1px #CC0000;
+}
+.message-box-info
+{
+	background: #EEF4D4 url("/Content/Icons/info.png") no-repeat 2px 2px;
+	border: solid 1px #8FAD3D;
+}

@@ -154,3 +154,41 @@ AjaxLoading.prototype.hide = function() {
     }
     this.element.hide();
 };
+
+// Message Box
+MessageBox = function(el) {
+    if (el.jquery == undefined) {
+        el = $(document.getElementById(el));
+    }
+    this.element = el;
+    el.hide();
+    el.removeClass();
+};
+MessageBox.prototype.showInfo = function(text) {
+    this.element.removeClass();
+    this.element.addClass("message-box message-box-info");
+    this.element.text(text);
+    this.element.show();
+};
+MessageBox.prototype.showError = function(text) {
+    this.element.removeClass();
+    this.element.addClass("message-box message-box-error");
+    this.element.text(text);
+    this.element.show();
+};
+MessageBox.prototype.showWait = function(text) {
+    this.element.removeClass();
+    this.element.addClass("message-box message-box-wait");
+    this.element.text(text);
+    this.element.show();
+};
+MessageBox.prototype.hide = function(delay) {
+    if (delay) {
+        var self = this;
+        setTimeout(function() {
+            self.element.hide();
+        }, delay);
+    } else {
+        this.element.hide();
+    }
+};

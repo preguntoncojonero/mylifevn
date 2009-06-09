@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -64,6 +62,20 @@ namespace MyLife.Controllers
             return View("Home", MyLifeContext.Settings.Theme);
         }
 
+        private static void OnUserRegisted(MembershipUser user)
+        {
+            MyLifeContext.Current.User = new GenericPrincipal(new GenericIdentity(user.UserName), null);
+            FormsAuthentication.SetAuthCookie(user.UserName, false);
+
+            var tpl = new XmlMailTemplate(Path.Combine(MyLifeContext.WorkingFolder, "App_Data\\Register.xml")) { Data = new { user.UserName } };
+            tpl.Process();
+            Net.Mail.SendMail.Send(user.Email, tpl.Subject, tpl.Body);
+
+            // Register new blog
+            var blog = Blog.New();
+            blog.Save();
+        }
+
         [MyLifeValidateAntiForgeryToken]
         public ActionResult Register()
         {
@@ -76,9 +88,7 @@ namespace MyLife.Controllers
 
                 // Deny user name in bad list
                 var streamReader = new StreamReader(MyLifeContext.WorkingFolder + "App_Data\\BlockUsers.txt");
-                var words = streamReader.ReadToEnd().Replace(Environment.NewLine, " ").Split(new[] {" "},
-                                                                                             StringSplitOptions.
-                                                                                                 RemoveEmptyEntries);
+                var words = streamReader.ReadToEnd().Replace(Environment.NewLine, " ").Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
                 streamReader.Close();
                 if (new List<string>(words).Contains(username) ||
                     !Regex.Match(username, Constants.Regulars.User).Success)
@@ -93,18 +103,7 @@ namespace MyLife.Controllers
                 switch (status)
                 {
                     case MembershipCreateStatus.Success:
-                        var tpl =
-                            new XmlMailTemplate(Path.Combine(MyLifeContext.WorkingFolder, "App_Data\\Register.xml"))
-                                {Data = new {user.UserName, Password = password}};
-                        tpl.Process();
-                        Net.Mail.SendMail.Send(user.Email, tpl.Subject, tpl.Body);
-
-                        MyLifeContext.Current.User = new GenericPrincipal(new GenericIdentity(user.UserName), null);
-                        FormsAuthentication.SetAuthCookie(user.UserName, false);
-
-                        // Register new blog
-                        var blog = Blog.New();
-                        blog.Save();
+                        OnUserRegisted(user);
 
                         obj.Status = true;
                         obj.Message = "Bạn đã đăng ký thành công.";
@@ -153,6 +152,7 @@ namespace MyLife.Controllers
                     }
                     obj.Status = true;
                     obj.RedirectUrl = returnUrl;
+                    obj.Message = "Bạn đã đăng nhập thành công";
                 }
                 else
                 {
@@ -363,13 +363,6 @@ namespace MyLife.Controllers
 
             ViewData[Constants.ViewData.Title] = "MyLife - Liên hệ";
             return View("Contact", MyLifeContext.Settings.Theme);
-        }
-
-        public ActionResult Test()
-        {
-            var image = Image.FromFile("D:\\Pictures\\Nghiand.jpg");
-            var str = MyLife.Serialization.ImageBase64Serializer.BuildImageTag(image, ImageFormat.Jpeg);
-            return Content(str);
         }
 
         #region News

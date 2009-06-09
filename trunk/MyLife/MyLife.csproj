@@ -173,6 +173,9 @@
     <Content Include="App_Data\Cities.xml" />
     <Content Include="App_Data\Register.xml" />
     <Content Include="ClientBin\MoneyBoxCharts.xap" />
+    <Content Include="Content\Icons\ajax-preloaders.gif" />
+    <Content Include="Content\Icons\error.png" />
+    <Content Include="Content\Icons\info.png" />
     <Content Include="Content\Themes\colorpicker.css" />
     <Content Include="Content\Themes\Images\button.gif" />
     <Content Include="Content\Themes\Images\ColorPicker\blank.gif" />
