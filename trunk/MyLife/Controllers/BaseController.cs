@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.Practices.EnterpriseLibrary.Logging;
 using MyLife.Models;
 using MyLife.Web.Profile;
 
@@ -19,11 +18,6 @@ namespace MyLife.Controllers
             }
         }
 
-        protected virtual bool IsJsonRequest
-        {
-            get { return Request.ContentType.Contains("application/json"); }
-        }
-
         protected virtual bool IsPostRequest
         {
             get { return Request.HttpMethod == "POST"; }
@@ -38,32 +32,19 @@ namespace MyLife.Controllers
         {
             if (IsPostRequest)
             {
-                if (IsJsonRequest)
-                {
-                    var obj = new AjaxModel {Message = filterContext.Exception.Message};
-                    if (filterContext.Exception.InnerException != null)
-                    {
-                        obj.Message += Environment.NewLine + filterContext.Exception.InnerException.Message;
-                    }
-
-                    filterContext.Result = Json(obj);
-                }
-                else
-                {
-                    filterContext.Result = View("ErrorMessage", filterContext.Exception);
-                }
-
-                filterContext.ExceptionHandled = true;
-
-                var message = filterContext.Exception.Message;
+                var obj = new AjaxModel {Message = filterContext.Exception.Message};
                 if (filterContext.Exception.InnerException != null)
                 {
-                    message += Environment.NewLine + filterContext.Exception.InnerException.Message;
+                    obj.Message += Environment.NewLine + filterContext.Exception.InnerException.Message;
                 }
-                message += Environment.NewLine + string.Format("Raw url: {0}", Request.RawUrl);
-                Logger.Write(message);
+
+                filterContext.Result = Json(obj);
+                filterContext.ExceptionHandled = true;
             }
-            base.OnException(filterContext);
+            else
+            {
+                base.OnException(filterContext);
+            }
         }
 
         protected static void ThrowHttpException(int httpCode, string message, params object[] args)

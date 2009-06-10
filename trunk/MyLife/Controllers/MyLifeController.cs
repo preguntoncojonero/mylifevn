@@ -110,10 +110,10 @@ namespace MyLife.Controllers
                         obj.RedirectUrl = "/" + user.UserName;
                         goto Return;
                     case MembershipCreateStatus.DuplicateEmail:
-                        obj.Message = "Địa chỉ email này đã có người sử dụng.\nBạn hãy sử dụng một địa chỉ email khác";
+                        obj.Message = "Địa chỉ email này đã có người sử dụng.";
                         goto Return;
                     case MembershipCreateStatus.DuplicateUserName:
-                        obj.Message = "Tên đăng nhập này đã có người sử dụng.\nBạn hãy sử dụng một tên đăng nhập khác";
+                        obj.Message = "Tên đăng nhập này đã có người sử dụng.";
                         goto Return;
                     case MembershipCreateStatus.InvalidEmail:
                         obj.Message = "Địa chỉ email không hợp lệ";

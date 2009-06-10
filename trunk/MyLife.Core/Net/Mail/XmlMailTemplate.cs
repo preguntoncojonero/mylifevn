@@ -47,10 +47,19 @@ namespace MyLife.Net.Mail
                 }
                 Body = regex.Replace(Body,
                                      new MatchEvaluator(
-                                         math => data[math.Value.Trim(new[] {'#'}).ToLowerInvariant()].ToString()));
+                                         math => GetData(math.Value.Trim(new[] {'#'}).ToLowerInvariant(), data)));
             }
         }
 
         #endregion
+
+        private static string GetData(string key, Hashtable hashtable)
+        {
+            if (hashtable.Contains(key))
+            {
+                return hashtable[key].ToString();
+            }
+            return string.Empty;
+        }
     }
 }
