@@ -62,7 +62,7 @@
                     msg.showInfo(result.Message);
                     window.location = result.RedirectUrl;
                 } else {
-                    $("#fLogin div.buttons").show();
+                    $("#fRegister div.buttons").show();
                     msg.showError(result.Message);
                 }
             }, "json");

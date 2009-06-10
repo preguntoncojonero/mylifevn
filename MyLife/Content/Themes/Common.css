@@ -444,14 +444,13 @@ span.upload
 */
 .message-box
 {
-	margin: 0px;
 	height: 32px;
 	vertical-align: middle;
 	line-height: 32px;
 	padding: 2px 2px 2px 40px !important;
-}
-.message-box-info
-{
+	margin: 10px 0px 10px 0px !important;
+	clear: both;
+	overflow: hidden;
 }
 .message-box-wait
 {
@@ -467,4 +466,17 @@ span.upload
 {
 	background: #EEF4D4 url("/Content/Icons/info.png") no-repeat 2px 2px;
 	border: solid 1px #8FAD3D;
+}
+
+/*
+	Preloaded Images
+*/
+#preloadedImages
+{
+	width: 0px;
+	height: 0px;
+	display: inline;
+	background-image: url("/Content/Icons/ajax-preloaders.gif");
+	background-image: url("/Content/Icons/error.png");
+	background-image: url("/Content/Icons/info.png");
 }
