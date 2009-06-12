@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Canvass.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Canvass.master" AutoEventWireup="true"
     Inherits="System.Web.Mvc.ViewPage" %>
 <%@ Import Namespace="MyLife.Web.Friends" %>
 
@@ -29,9 +29,9 @@
     <div id="divButtons">
         <table>
             <tr>
-                <td><a id="btnAddGroup" class="button">Thêm nhóm mới</a></td>
-                <td><a id="btnAddFriend" class="button">Thêm người bạn mới</a></td>
-                <td><a id="btnBirthdays" class="button">Sắp sinh nhật</a></td>
+                <td><a id="btnAddGroup" class="button mini-icons group-add">Thêm nhóm mới</a></td>
+                <td><a id="btnAddFriend" class="button mini-icons friend-add">Thêm người bạn mới</a></td>
+                <td><a id="btnBirthdays" class="button mini-icons birthday">Sắp sinh nhật</a></td>
             </tr>
         </table>
     </div><br />
@@ -46,8 +46,8 @@
                 <input type="hidden" id="group_Id" name="group.Id" />
                 <table>
                     <tr>
-                        <td><a class="button" id="btnAddOrEditGroup" style="width: 100px;">Thêm mới</a></td>
-                        <td><a class="button cancel" id="btnCancelAddOrEditGroup" style="width: 100px;">Hủy bỏ</a></td>
+                        <td><a class="button mini-icons" id="btnAddOrEditGroup" style="width: 100px;">Thêm mới</a></td>
+                        <td><a class="button mini-icons cancel" id="btnCancelAddOrEditGroup" style="width: 100px;">Hủy bỏ</a></td>
                     </tr>
                 </table>
             </div>
@@ -77,7 +77,7 @@
             </div>
             <div>
                 <label for="friend_Birthday">Ngày sinh nhật</label>
-                <input type="text" id="friend_Birthday" name="friend.Birthday" class="birthday" />
+                <input type="text" id="friend_Birthday" name="friend.Birthday" class="mini-icons birthday" />
                 <span class="notes">Định dạng: ngày/tháng/năm, ví dụ: 17/04/1987</span>
             </div>
             <div>
@@ -136,8 +136,8 @@
                 <input type="hidden" id="friend_Id" name="friend.Id" />
                 <table>
                     <tr>
-                        <td><a class="button" style="width: 100px;" id="btnAddOrEditFriend">Thêm mới</a></td>
-                        <td><a class="button cancel" style="width: 100px;" id="btnCancelAddOrEditFriend">Hủy bỏ</a></td>
+                        <td><a class="button mini-icons" style="width: 100px;" id="btnAddOrEditFriend">Thêm mới</a></td>
+                        <td><a class="button mini-icons cancel" style="width: 100px;" id="btnCancelAddOrEditFriend">Hủy bỏ</a></td>
                     </tr>
                 </table>
             </div>

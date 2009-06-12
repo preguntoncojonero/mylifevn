@@ -173,10 +173,17 @@
     <Content Include="App_Data\Cities.xml" />
     <Content Include="App_Data\Register.xml" />
     <Content Include="ClientBin\MoneyBoxCharts.xap" />
-    <Content Include="Content\Icons\ajax-preloaders.gif" />
-    <Content Include="Content\Icons\error.png" />
-    <Content Include="Content\Icons\info.png" />
+    <Content Include="Content\Themes\Friends\icons.png" />
+    <Content Include="Content\Themes\Friends\Canvass\img01.gif" />
+    <Content Include="Content\Themes\Friends\Canvass\img02.gif" />
+    <Content Include="Content\Themes\Friends\Canvass\img04.gif" />
+    <Content Include="Content\Themes\Friends\Canvass\img07.gif" />
+    <Content Include="Content\Themes\Friends\Canvass\img10.gif" />
+    <Content Include="Content\Themes\Friends\Canvass\img12.gif" />
+    <Content Include="Content\Themes\Friends\Canvass\style.css" />
+    <Content Include="Content\Themes\icons_32x32.png" />
     <Content Include="Content\Themes\colorpicker.css" />
+    <Content Include="Content\Themes\icons_16x16.png" />
     <Content Include="Content\Themes\Images\button.gif" />
     <Content Include="Content\Themes\Images\ColorPicker\blank.gif" />
     <Content Include="Content\Themes\Images\ColorPicker\colorpicker_background.png" />
@@ -272,7 +279,6 @@
     <Content Include="Scripts\Controllers\MyLifeController.js" />
     <Content Include="Scripts\ControlsToolkit.js" />
     <Content Include="Scripts\date.js" />
-    <Content Include="Content\DynamicHtml\border-radius.htc" />
     <Content Include="Scripts\Format.js" />
     <Content Include="Scripts\jquery.autogrow.js" />
     <Content Include="Scripts\jquery.contextMenu.js" />
@@ -305,6 +311,7 @@
     <Content Include="FileUpload.ashx" />
     <None Include="Home.key" />
     <None Include="MyLifeVn.key" />
+    <Content Include="Views\Friends\Canvass.master" />
     <Content Include="TinyMCE\tiny_mce_gzip.aspx" />
     <Content Include="Views\Blogs\dfBlog.master" />
     <Content Include="Images\life-small.jpg" />
@@ -326,7 +333,6 @@
     <Content Include="Content\Themes\Images\uup.png" />
     <Content Include="Content\Themes\Images\wbg.gif" />
     <Content Include="Content\Themes\MyLife\Canvass\bullet_star.png" />
-    <Content Include="Content\Themes\MyLife\Canvass\friends.css" />
     <Content Include="Content\Themes\MyLife\Canvass\pencil.png" />
     <Content Include="Images\sign-up-now.jpg" />
     <Content Include="Content\Themes\MyLife\Canvass\img01.gif" />

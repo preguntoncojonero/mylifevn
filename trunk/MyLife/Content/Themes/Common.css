@@ -133,52 +133,52 @@ a:hover.button
 	color: #0066CC;
 	text-decoration: none;
 }
+/*
+	Icons
+*/
+.mini-icons
+{
+	background-image: url('/Content/Themes/icons_16x16.png');
+	background-repeat: no-repeat;
+	padding-left: 18px;
+	height: 16px;
+}
 a.add
 {
-	padding-left: 18px;
-	background: transparent url("/Icons/add.png") no-repeat 0px -1px;
+	background-position: 0px -22px;
+	line-height: 16px;
+	height: 16px;
 }
 a.edit
 {
-	background: transparent url("/Icons/add.gif") no-repeat 0px 0px;
-	padding-left: 18px;
+	background-position: 0px -274px;
 }
 a.delete
 {
-	background: transparent url("/Icons/delete.png") no-repeat 0px -1px;
-	padding-left: 18px;
+	background-position: 0px -176px;
 }
 a.cancel
 {
-	background: transparent url("/Icons/cross.png") no-repeat 0px -1px;
-	padding-left: 18px;
+	background-position: 0px -126px;
 }
 a.user
 {
-	background: transparent url("/Icons/user.png") no-repeat 0px -1px;
-	padding-left: 18px;
+	background-position: 0px -865px;
+	height: 16px;
 }
-span.download
+a.rss
 {
-	background: transparent url("/Icons/download.gif") no-repeat 10px 8px;
-	text-indent: 30px;
-	display: block;	
-}
-span.upload
-{
-	background: transparent url("/Icons/upload.gif") no-repeat 10px 8px;
-	text-indent: 30px;
-	display: block;	
-}
-.rss-import
-{
-	padding: 2px 0px 2px 20px;
-	background: transparent url("/Icons/rss-go.png") no-repeat;
+	background-position: 0px -624px;
 }
 .send-mail
 {
-	padding: 2px 0px 2px 20px;
-	background: transparent url("/Icons/send-email.png") no-repeat;
+	background-position: 0px -656px;
+}
+.icons
+{
+	background-image: url('/Content/Themes/icons_32x32.png');
+	background-repeat: no-repeat;
+	padding-left: 35px;
 }
 
 /*
@@ -447,36 +447,27 @@ span.upload
 	height: 32px;
 	vertical-align: middle;
 	line-height: 32px;
-	padding: 2px 2px 2px 40px !important;
+	padding: 0px 0px 0px 40px !important;
 	margin: 10px 0px 10px 0px !important;
 	clear: both;
-	overflow: hidden;
+	background-image: url("/Content/Themes/icons_32x32.png");
+	background-repeat: no-repeat;
 }
 .message-box-wait
 {
-	background: #FFFFCC url("/Content/Icons/ajax-preloaders.gif") no-repeat 2px 2px;
+	background-position: 0px 0px;
+	background-color: #FFFFCC;
 	border: solid 1px #DEDEDE;
 }
 .message-box-error
 {
-	background: #F6CBCA url("/Content/Icons/error.png") no-repeat 2px 2px;
+	background-position: 0px -32px;
+	background-color: #F6CBCA;
 	border: solid 1px #CC0000;
 }
 .message-box-info
 {
-	background: #EEF4D4 url("/Content/Icons/info.png") no-repeat 2px 2px;
+	background-position: 2px -256px;
+	background-color: #EEF4D4;
 	border: solid 1px #8FAD3D;
-}
-
-/*
-	Preloaded Images
-*/
-#preloadedImages
-{
-	width: 0px;
-	height: 0px;
-	display: inline;
-	background-image: url("/Content/Icons/ajax-preloaders.gif");
-	background-image: url("/Content/Icons/error.png");
-	background-image: url("/Content/Icons/info.png");
 }
