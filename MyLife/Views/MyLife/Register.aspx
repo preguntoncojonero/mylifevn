@@ -46,6 +46,8 @@
                 register();
                 return false;
             });
+
+            msg.showInfo("Bạn hãy nhập các thông tin cần thiết để đăng ký");
         });
 
         function register() {

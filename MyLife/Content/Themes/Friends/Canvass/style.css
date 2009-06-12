@@ -187,78 +187,6 @@ img.right {
 	font-size: 182%;
 	font-weight: normal;
 }
-#links {
-}
-.newest-users
-{
-}
-.newest-users h2
-{
-	background: url(img08.gif) no-repeat left bottom;
-	height: 40px;
-	padding: 20px 0 0 40px;
-	text-transform: lowercase;
-	font-size: 167%;
-}
-.newest-users ul
-{
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-.newest-users li
-{	
-}
-.newest-users img
-{
-	border: none;
-	float: left;
-	margin-right: 5px;
-	width: 64px;
-	height: 64px;
-}
-.newest-users p
-{
-	font-weight: bold;
-}
-.newest-users p span
-{
-	display: block;
-	font-weight: normal;
-}
-.newest-users a
-{
-	text-decoration: none;
-	border: none;
-}
-.recent-posts
-{
-}
-.recent-posts h2
-{
-	background: url(img09.gif) no-repeat left bottom;
-	height: 40px;
-	padding: 20px 0 0 40px;
-	text-transform: lowercase;
-	font-size: 167%;
-}
-.recent-posts ul
-{
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-}
-.recent-posts li
-{
-	padding: 0px 0px 0px 18px;
-	background: url(bullet_star.png) no-repeat 1px 5px;
-}
-.recent-posts a
-{
-	text-decoration: none;
-	border: none;
-}
-
 /*
 	News
 */
@@ -273,49 +201,119 @@ img.right {
 {
 	font-size: 18px;
 }
-
-.personal
-{
-}
-.personal h2
-{
-}
-.personal ul
+.groups
 {
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
-.personal li
+.groups li
 {
-	padding: 0px 0px 0px 18px;
-	background: url(bullet_star.png) no-repeat 1px 3px;
+	float: left;
+	width: 120px;
 }
-.personal a
+.groups a
 {
 	text-decoration: none;
 	border: none;
+	overflow: hidden;
+	cursor: pointer;
 }
-
-.blog-tools
+a.group-add
 {
+	background: transparent url("../icons.png") no-repeat 0px -21px;
+	display: block;
+	height: 16px;
+	line-height: 16px;
 }
-.blog-tools h2
+a.friend-add
 {
+	background: transparent url("../icons.png") no-repeat 0px -147px;
+	display: block;
+	height: 16px;
+	line-height: 16px;
 }
-.blog-tools ul
+input.yahoo
+{
+	background: transparent url("../icons.png") no-repeat 2px -229px;
+	padding-left: 20px;
+	width: 182px !important;
+	height: 18px;
+	line-height: 18px;
+	border: solid 1px #7F9DB9;
+}
+input.skype
+{
+	background: transparent url("../icons.png") no-repeat 2px -103px;
+	padding-left: 20px;
+	width: 182px !important;
+	height: 18px;
+	line-height: 18px;
+	border: solid 1px #7F9DB9;
+}
+a.birthday
+{
+	background-position: 0px -84px;
+	display: block;
+	height: 16px;
+	line-height: 16px;
+}
+input.birthday
+{
+	background-position: 2px -82px;
+	padding-left: 20px;
+	width: 182px !important;
+	height: 18px;
+	line-height: 18px;
+	width: 182px !important;
+	border: solid 1px #7F9DB9;
+}
+.male
+{
+	background: url('/Icons/male.png') no-repeat 1px;
+	padding-left: 20px;
+	width: 182px !important;
+	height: 18px;
+	line-height: 18px;
+}
+.female
+{
+	background: url('/Icons/female.png') no-repeat 1px;
+	padding-left: 20px;
+	width: 182px !important;
+	height: 18px;
+	line-height: 18px;
+}
+.friends
 {
 	list-style: none;
-	margin: 0px;
+}
+.friends li
+{
+	float: left;
+	width: 125px;
+	height: 45px;
+	overflow: hidden;
+	background-repeat: no-repeat !important;
+	background-position: 22px 0px !important;
+	cursor: pointer;
+	text-align: center;
+	padding-top: 85px;
+}
+.friends span
+{
 	padding: 0px;
+	margin: 0px;
 }
-.blog-tools li
+.groupInfo
 {
-	padding: 0px 0px 0px 18px;
-	background: url(bullet_star.png) no-repeat 1px 3px;
 }
-.blog-tools a
+.letters
 {
-	text-decoration: none;
+}
+.letters a
+{
+	margin: 0px 4px 0px 4px;
 	border: none;
+	text-decoration: none;
 }

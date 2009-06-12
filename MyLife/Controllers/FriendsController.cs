@@ -16,7 +16,7 @@ namespace MyLife.Controllers
         {
             ViewData[Constants.ViewData.Title] = "Friends - Những người bạn quanh ta";
             ViewData["Cities"] = new SelectList(Utils.GetCities());
-            return View("Default", MyLifeContext.Settings.Theme);
+            return View("Default", MyLifeContext.Settings.Friends.Theme);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
@@ -96,9 +96,9 @@ namespace MyLife.Controllers
             var id = Convert.ToInt32(Request.Form["Id"]);
             var friend = Friend.GetFriendById(id);
             friend.Delete();
-            
+
             var friends = Friend.GetFriends(User.Identity.Name);
-            return Json(new AjaxModel { Status = true, Data = friends });    
+            return Json(new AjaxModel {Status = true, Data = friends});
         }
 
         [AcceptVerbs(HttpVerbs.Post)]

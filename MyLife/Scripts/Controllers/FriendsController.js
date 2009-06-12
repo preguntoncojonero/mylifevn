@@ -351,10 +351,10 @@ FriendsController.prototype.editFriend = function(id) {
     $("#friend_Id").val(friend.Id);
 
     this.tplFriendGroups.overwrite($("#listFriendGroups"), this.groups.get({}));
-    $("#listFriendGroups li:first", listFriendGroups).remove();
+    $("#listFriendGroups li:first").remove();
 
     $(friend.Groups).each(function(i, item) {
-        $("input[value=" + item.Id + "]", listFriendGroups).attr('checked', true);
+        $("#listFriendGroups input[value=" + item.Id + "]").attr('checked', true);
     });
 
     $("#btnAddOrEditFriend").html('Chỉnh sửa').removeClass('add').addClass('edit');
@@ -419,14 +419,14 @@ FriendsController.prototype.showFriend = function(id) {
 
     this.showViewById("divShowFriend");
 };
-FriendsController.prototype.deleteFriend = function(friend) {
+FriendsController.prototype.deleteFriend = function(id) {
     if (!confirm('Bạn muốn xóa người bạn này?')) {
         return false;
     }
 
     var self = this;
     var url = this.baseUrl + "/deletefriend";
-    $.post(url, { Id: friend.Id }, function(result) {
+    $.post(url, { Id: id }, function(result) {
         if (result.Status) {
             self.onFriendsChanged(result.Data);
             self.back();

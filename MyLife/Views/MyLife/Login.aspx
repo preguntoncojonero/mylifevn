@@ -24,7 +24,7 @@
             <div class="buttons">
                 <%= Html.MyLifeAntiForgeryToken() %>
                 <%= Html.Hidden("ReturnUrl", Request.QueryString["ReturnUrl"])%>
-                <a class="button user" id="btnLogin">Đăng nhập</a>
+                <a class="button mini-icons user" id="btnLogin">Đăng nhập</a>
             </div>
             <div id="divMessageBox"></div>
             <div>
@@ -49,6 +49,7 @@
                     login();
                 }
             });
+            msg.showInfo("Bạn hãy nhập tên đăng nhập và mật khẩu");
         });
 
         function login() {
