@@ -10,5 +10,12 @@ namespace MyLife.Configuration
             get { return (string) base["theme"]; }
             set { base["theme"] = value; }
         }
+
+        [ConfigurationProperty("title", IsRequired = true)]
+        public string Title
+        {
+            get { return (string) base["title"]; }
+            set { base["title"] = value; }
+        }
     }
 }

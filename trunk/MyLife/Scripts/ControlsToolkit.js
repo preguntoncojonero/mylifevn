@@ -161,25 +161,31 @@ MessageBox = function(el) {
         el = $(document.getElementById(el));
     }
     this.element = el;
+    this.element.empty();
+    this.element.append("<div></div>");
+    this.element.append("<span></span>");
     el.hide();
     el.removeClass();
 };
 MessageBox.prototype.showInfo = function(text) {
     this.element.removeClass();
     this.element.addClass("message-box message-box-info");
-    this.element.text(text);
+    $("div", this.element).removeClass().addClass("message-box-icon message-box-info-icon");
+    $("span", this.element).text(text);
     this.element.show();
 };
 MessageBox.prototype.showError = function(text) {
     this.element.removeClass();
     this.element.addClass("message-box message-box-error");
-    this.element.text(text);
+    $("div", this.element).removeClass().addClass("message-box-icon message-box-error-icon");
+    $("span", this.element).text(text);
     this.element.show();
 };
 MessageBox.prototype.showWait = function(text) {
     this.element.removeClass();
     this.element.addClass("message-box message-box-wait");
-    this.element.text(text);
+    $("div", this.element).removeClass().addClass("message-box-icon message-box-wait-icon");
+    $("span", this.element).text(text);
     this.element.show();
 };
 MessageBox.prototype.hide = function(delay) {

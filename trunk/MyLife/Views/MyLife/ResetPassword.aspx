@@ -12,36 +12,55 @@
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <div class="cssform">
         <% using(Html.BeginForm("resetpassword", "MyLife", System.Web.Mvc.FormMethod.Post, new { id = "fResetPassword" })){%>
-            <fieldset>
-                <legend>Tìm lại mật khẩu</legend>
-                <div>
-                    <label for="user_UserName">Tên đăng nhập<span class="required"> *</span></label>
-                    <input type="text" id="user_UserName" name="user.UserName" maxlength="255" />
-                </div>
-                <div class="buttons">
-                    <a class="button user" id="btnResetPassword">Tìm lại mật khẩu</a>
-                </div>
-            </fieldset>
+            <h2>Tìm lại mật khẩu</h2>
+            <div>
+                <label for="user_UserName">Tên đăng nhập<span class="required"> *</span></label>
+                <input type="text" id="user_UserName" name="user.UserName" maxlength="255" />
+            </div>
+            <div class="buttons">
+                <%= Html.MyLifeAntiForgeryToken() %>
+                <a class="button mini-icons user" href="javascript:void(0)" id="btnResetPassword">Tìm lại mật khẩu</a>
+            </div>
+            <div id="divMessageBox"></div>
             <%= Html.ClientSideValidation("user", Validates.GetResetPasswordRuleSet())%>
         <% } %>
     </div>
     
-    <div id="divAjaxLoading" style="width: 200px">
-        Đang kết nối với máy chủ<br />
-        Nhấn <b style="color: Red">F5</b> nếu chờ quá lâu.
-    </div>
-    
     <script type="text/javascript">
-        var controller;
-        $(document).ready(function() {
-            controller = new MyLifeController();
+        var msg;
 
-            new AjaxLoading("divAjaxLoading");
+        $(document).ready(function() {
+            msg = new MessageBox("divMessageBox");
+            msg.showInfo("Bạn hãy nhập tên đăng nhập để tìm lại mật khẩu");
+
+            $("#user_UserName").focus();
 
             $("#btnResetPassword").click(function() {
-                controller.resetPassword();
+                reset();
+            });
+
+            $("#fResetPassword").submit(function() {
+                reset();
                 return false;
             });
         });
+
+        function reset() {
+            var self = $("#fResetPassword");
+            if (!self.validate().form()) {
+                return false;
+            }
+            msg.showWait("Đang kết nối tới máy chủ, bạn hãy đợi trong giây lát");
+            var action = self.attr("action");
+            var data = self.serialize();
+            $.post(action, data, function(result) {
+                if (result.Status) {
+                    msg.showInfo(result.Message);
+                    window.location = result.RedirectUrl;
+                } else {
+                    msg.showError(result.Message);
+                }
+            }, "json");
+        }
     </script>
 </asp:Content>
