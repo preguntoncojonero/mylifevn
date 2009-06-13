@@ -14,7 +14,7 @@ namespace MyLife.Controllers
         [Authorize]
         public ActionResult Default()
         {
-            ViewData[Constants.ViewData.Title] = "Friends - Những người bạn quanh ta";
+            ViewData[Constants.ViewData.Title] = MyLifeContext.Settings.Friends.Title;
             ViewData["Cities"] = new SelectList(Utils.GetCities());
             return View("Default", MyLifeContext.Settings.Friends.Theme);
         }

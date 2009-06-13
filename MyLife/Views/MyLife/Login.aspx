@@ -24,7 +24,7 @@
             <div class="buttons">
                 <%= Html.MyLifeAntiForgeryToken() %>
                 <%= Html.Hidden("ReturnUrl", Request.QueryString["ReturnUrl"])%>
-                <a class="button mini-icons user" id="btnLogin">Đăng nhập</a>
+                <a class="button mini-icons user" href="javascript:void(0)" id="btnLogin">Đăng nhập</a>
             </div>
             <div id="divMessageBox"></div>
             <div>
@@ -39,6 +39,9 @@
         var msg;
         $(document).ready(function() {
             msg = new MessageBox("divMessageBox");
+
+            $("#UserName").focus();
+
             $("#btnLogin").click(function() {
                 login();
                 return false;
@@ -59,14 +62,12 @@
             }
             var action = self.attr('action');
             var data = self.serialize();
-            $("#fLogin div.buttons").hide();
             msg.showWait("Đang kết nối tới máy chủ, bạn hãy đợi trong giây lát");
             $.post(action, data, function(result) {
                 if (result.Status) {
                     msg.showInfo(result.Message);
                     window.location = result.RedirectUrl;
                 } else {
-                    $("#fLogin div.buttons").show();
                     msg.showError(result.Message);
                 }
             }, "json");

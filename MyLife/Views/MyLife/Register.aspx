@@ -30,7 +30,7 @@
         </div>
         <div class="buttons">
             <%= Html.MyLifeAntiForgeryToken() %>
-            <a class="button user" id="btnRegister">Đăng ký tài khoản</a>
+            <a class="button mini-icons user" href="javascript:void(0)" id="btnRegister">Đăng ký tài khoản</a>
         </div>
         <div id="divMessageBox"></div>
     <% } %>    
@@ -41,21 +41,38 @@
         var msg;
         $(document).ready(function() {
             msg = new MessageBox("divMessageBox");
-
+            
             $("#btnRegister").click(function() {
                 register();
                 return false;
             });
 
-            msg.showInfo("Bạn hãy nhập các thông tin cần thiết để đăng ký");
+            $("#UserName").focus(function() {
+                msg.showInfo("Tên đăng nhập chỉ bao gồm chữ cái a-z, số 0-9, ký tự gạch dưới _");
+            });
+
+            $("#Password").focus(function() {
+                msg.showInfo("Mật khẩu đăng nhập, bạn nên tạo một mật khẩu mạnh");
+            });
+
+            $("#ConfirmPassword").focus(function() {
+                msg.showInfo("Bạn nhập lại mật khẩu như ô ở trên");
+            });
+
+            $("#Email").focus(function() {
+                msg.showInfo("Địa chỉ email của bạn, bạn hãy cung cấp một địa chỉ email có thực");
+            });
+
+            $("#UserName").focus();
         });
 
         function register() {
             var self = $("#fRegister");
             if (!self.valid()) {
+                msg.showError("Bạn hãy điền chính xác các thông tin cần thiết");
                 return false;
             }
-            $("#fRegister div.buttons").hide();
+            
             msg.showWait("Đang kết nối tới máy chủ, bạn hãy đợi trong giây lát");
             var action = self.attr('action');
             var data = self.serialize();
@@ -64,7 +81,6 @@
                     msg.showInfo(result.Message);
                     window.location = result.RedirectUrl;
                 } else {
-                    $("#fRegister div.buttons").show();
                     msg.showError(result.Message);
                 }
             }, "json");

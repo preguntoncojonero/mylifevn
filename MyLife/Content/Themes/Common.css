@@ -163,7 +163,7 @@ a.cancel
 }
 a.user
 {
-	background-position: 0px -865px;
+	background-position: 0px -1135px;
 	height: 16px;
 }
 a.rss
@@ -444,30 +444,52 @@ a.rss
 */
 .message-box
 {
-	height: 32px;
-	vertical-align: middle;
 	line-height: 32px;
-	padding: 0px 0px 0px 40px !important;
+	padding: 2px 2px 2px 40px !important;
 	margin: 10px 0px 10px 0px !important;
 	clear: both;
+}
+.message-box div
+{
+	float: left;
+	margin-left: -38px;
+}
+.message-box span
+{
+}
+.message-box-icon
+{
 	background-image: url("/Content/Themes/icons_32x32.png");
 	background-repeat: no-repeat;
+	display: block;
+	width: 32px;
+	height: 32px;
+	padding: 0px !important;
 }
 .message-box-wait
 {
-	background-position: 0px 0px;
 	background-color: #FFFFCC;
 	border: solid 1px #DEDEDE;
 }
+.message-box-wait-icon
+{
+	background-position: 0px -36px;
+}
 .message-box-error
 {
-	background-position: 0px -32px;
 	background-color: #F6CBCA;
 	border: solid 1px #CC0000;
 }
+.message-box-error-icon
+{
+	background-position: 0px -109px;
+}
 .message-box-info
 {
-	background-position: 2px -256px;
 	background-color: #EEF4D4;
 	border: solid 1px #8FAD3D;
+}
+.message-box-info-icon
+{
+	background-position: 0px -259px;
 }
