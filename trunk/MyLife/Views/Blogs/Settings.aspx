@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Blogs/iNove.master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<Blog>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="dfBlog.master" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewPage<Blog>" %>
 <%@ Import Namespace="MyLife.Web.DynamicData"%>
 <%@ Import Namespace="MyLife.Web.Blogs"%>
 

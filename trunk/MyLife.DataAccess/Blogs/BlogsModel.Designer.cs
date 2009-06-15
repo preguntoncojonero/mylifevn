@@ -12,7 +12,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("BlogsModel", "tblBlogs_CategoriestblBlogs_Posts", "tblBlogs_Categories", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MyLife.DataAccess.Blogs.tblBlogs_Categories), "tblBlogs_Posts", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MyLife.DataAccess.Blogs.tblBlogs_Posts))]
 
 // Original file name:
-// Generation date: 5/27/2009 4:10:29 PM
+// Generation date: 6/15/2009 4:27:04 PM
 namespace MyLife.DataAccess.Blogs
 {
     
@@ -1490,7 +1490,8 @@ namespace MyLife.DataAccess.Blogs
         /// <param name="slug">Initial value of Slug.</param>
         /// <param name="title">Initial value of Title.</param>
         /// <param name="commentsEnabled">Initial value of CommentsEnabled.</param>
-        public static tblBlogs_Posts CreatetblBlogs_Posts(int id, int blogId, string content, global::System.DateTime createdDate, string createdBy, bool published, global::System.DateTime modifiedDate, string modifiedBy, string slug, string title, bool commentsEnabled)
+        /// <param name="viewCount">Initial value of ViewCount.</param>
+        public static tblBlogs_Posts CreatetblBlogs_Posts(int id, int blogId, string content, global::System.DateTime createdDate, string createdBy, bool published, global::System.DateTime modifiedDate, string modifiedBy, string slug, string title, bool commentsEnabled, int viewCount)
         {
             tblBlogs_Posts tblBlogs_Posts = new tblBlogs_Posts();
             tblBlogs_Posts.Id = id;
@@ -1504,6 +1505,7 @@ namespace MyLife.DataAccess.Blogs
             tblBlogs_Posts.Slug = slug;
             tblBlogs_Posts.Title = title;
             tblBlogs_Posts.CommentsEnabled = commentsEnabled;
+            tblBlogs_Posts.ViewCount = viewCount;
             return tblBlogs_Posts;
         }
         /// <summary>
@@ -1782,6 +1784,29 @@ namespace MyLife.DataAccess.Blogs
         private bool _CommentsEnabled;
         partial void OnCommentsEnabledChanging(bool value);
         partial void OnCommentsEnabledChanged();
+        /// <summary>
+        /// There are no comments for Property ViewCount in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public int ViewCount
+        {
+            get
+            {
+                return this._ViewCount;
+            }
+            set
+            {
+                this.OnViewCountChanging(value);
+                this.ReportPropertyChanging("ViewCount");
+                this._ViewCount = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("ViewCount");
+                this.OnViewCountChanged();
+            }
+        }
+        private int _ViewCount;
+        partial void OnViewCountChanging(int value);
+        partial void OnViewCountChanged();
         /// <summary>
         /// There are no comments for Categories in the schema.
         /// </summary>

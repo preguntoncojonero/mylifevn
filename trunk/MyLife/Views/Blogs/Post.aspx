@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Blogs/iNove.master" AutoEventWireup="true"
+﻿<%@ Page Language="C#" MasterPageFile="dfBlog.master" AutoEventWireup="true"
     Inherits="System.Web.Mvc.ViewPage<Post>" %>
 <%@ Import Namespace="MyLife.Web.Blogs"%>
 <%@ Import Namespace="MyLife.Web.Plugins.Emoticons"%>

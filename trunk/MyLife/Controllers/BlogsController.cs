@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
@@ -139,6 +142,8 @@ namespace MyLife.Controllers
             {
                 throw new HttpException(404, Messages.PostNotExist);
             }
+
+            post.IncreaseViewCount();
 
             ViewData[Constants.ViewData.Title] = string.Format("{0} - {1}'s blog", post.Title, post.CreatedBy);
             ViewData[Constants.ViewData.Blogs.IsPostList] = false;
@@ -453,7 +458,7 @@ namespace MyLife.Controllers
         }
 
         [Authorize]
-        public ActionResult ImportRss()
+        public ActionResult Import()
         {
             var blog = Blog.GetBlogByName(User.Identity.Name);
 
@@ -498,9 +503,67 @@ namespace MyLife.Controllers
 
             ViewData[Constants.ViewData.Title] = string.Format("{0}'s blog - Chuyển đổi rss feed thành bài viết",
                                                                blog.CreatedBy);
-            ViewData[Constants.ViewData.Blogs.Header] = "Chuyển đổi rss feed thành bài viết";
+            ViewData[Constants.ViewData.Blogs.Header] = "Chuyển đổi các bài viết từ các blog khác";
             CommonTasks(blog);
-            return View("ImportRss", blog.Theme);
+            return View("Import", blog.Theme);
+        }
+
+        [Authorize]
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult ImportYahoo360Archive()
+        {
+            var success = 0;
+            var error = 0;
+            var total = 0;
+
+            if (Request.Files.Count > 0)
+            {
+                var content = new StreamReader(Request.Files[0].InputStream).ReadToEnd();
+
+                var posts =
+                    Regex.Split(content, "\n-----\n--------\n").Where(str => !string.IsNullOrEmpty(str)).ToArray();
+
+                var blog = Blog.GetBlogByName(User.Identity.Name);
+
+                StringReader reader;
+                foreach (var str in posts)
+                {
+                    var post = new Post();
+                    reader = new StringReader(str);
+
+                    // Abort AUTHOR:
+                    reader.ReadLine();
+
+                    // Read TITLE:
+                    post.Title = reader.ReadLine().Substring(7);
+
+                    // Read DATE:
+                    post.PublishedDate = DateTime.ParseExact(reader.ReadLine().Substring(6, 10), "MM/dd/yyyy", null);
+
+                    // Read STATUS:
+                    post.Published = reader.ReadLine().Substring(8) == "publish";
+
+                    // Read BODY:
+                    reader.ReadLine();
+                    post.Content = reader.ReadLine();
+
+                    post.BlogId = blog.Id;
+
+                    try
+                    {
+                        post.Save();
+                    }
+                    catch
+                    {
+                        error++;
+                    }
+                }
+
+                total = posts.Length;
+                success = total - error;
+            }
+
+            return Content(string.Format("Đã chuyển đổi thành công {0} trong tổng số {1} bài viết", success, total));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]

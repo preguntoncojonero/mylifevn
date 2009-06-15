@@ -31,6 +31,7 @@ namespace MyLife.Web.Blogs
         public abstract IList<Post> Search(int blogId, string keyword);
         public abstract void UpdatePost(Post post);
         public abstract void DeletePost(int id);
+        public abstract void IncreaseViewCount(int postId);
 
         #endregion
 

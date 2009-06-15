@@ -23,6 +23,10 @@
 	padding: 5px 0px 5px 0px;
 	clear: both;
 }
+.cssform p
+{
+	font-size: 13px;
+}
 .cssform div.buttons
 {
 	padding-left: 150px;
@@ -168,7 +172,11 @@ a.user
 }
 a.rss
 {
-	background-position: 0px -624px;
+	background-position: 0px -819px;
+}
+a.upload
+{
+	background-position: 0px -1113px;
 }
 .send-mail
 {

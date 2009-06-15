@@ -2,7 +2,7 @@
 <%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<Post>" %>
 
 <div class="post">
-    <h2><%= Html.Link(Model.Title, Model.ToUri(), new { rel = "bookmark", title = Model.Title })%></h2>
+    <h2><%= Html.Link(Model.Title, Model.RelativeUrl, new { rel = "bookmark", title = Model.Title })%></h2>
     <div class="post-meta">
         <span class="date"><%= Model.CreatedDate.ToString(MyLifeContext.Settings.LongDateFormat)%></span>
     </div>
@@ -14,7 +14,7 @@
     <% if(!(bool) ViewData[Constants.ViewData.Blogs.IsPostList]){ %>
         <div class="post-meta">
             <span class="post-categories">
-                <%= Model.Categories.FormatAsLinks(item => item.Name, item => item.ToUri(), ", ") %>
+                <%= Model.Categories.FormatAsLinks(item => item.Name, item => item.RelativeUrl, ", ") %>
             </span>
         </div>
         <% Html.RenderPartial("Comments", Model.Comments); %>
