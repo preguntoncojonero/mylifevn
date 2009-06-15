@@ -136,7 +136,7 @@ namespace MyLife.DataAccess.Blogs
                     list =
                         context.tblBlogs_Posts.Where(
                             item => item.BlogId == blogId && item.Published).OrderByDescending(
-                            item => item.CreatedDate).Skip(indexOfPage*sizeOfPage).Take(sizeOfPage).ToList();
+                            item => item.Id).Skip(indexOfPage*sizeOfPage).Take(sizeOfPage).ToList();
                     break;
                 case PostOptions.NotPublished:
                     total =
@@ -543,6 +543,14 @@ namespace MyLife.DataAccess.Blogs
                     item => item.BlogId == blogId && (item.Title.Contains(keyword) || item.Content.Contains(keyword))).
                     ToList();
             return list.ConvertAll(obj => Convert(obj));
+        }
+
+        public override void IncreaseViewCount(int postId)
+        {
+            var context = new BlogsEntities();
+            var post = context.tblBlogs_Posts.Where(item => item.Id == postId).First();
+            post.ViewCount++;
+            context.SaveChanges();
         }
     }
 }

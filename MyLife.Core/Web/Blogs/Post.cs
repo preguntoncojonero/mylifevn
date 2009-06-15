@@ -39,6 +39,8 @@ namespace MyLife.Web.Blogs
 
         public bool Published { get; set; }
 
+        public DateTime PublishedDate { get; set; }
+
         public string Slug { get; set; }
 
         [Required(ErrorMessage = "Bạn chưa nhập tiêu đề bài viết")]
@@ -46,6 +48,8 @@ namespace MyLife.Web.Blogs
         public string Title { get; set; }
 
         public bool CommentsEnabled { get; set; }
+
+        public int ViewCount { get; set; }
 
         [ScriptIgnore]
         public List<Comment> Comments { get; private set; }
@@ -58,6 +62,12 @@ namespace MyLife.Web.Blogs
             get { return string.Format("/{0}/blog/post/{1}", CreatedBy, Slug); }
         }
 
+        public void IncreaseViewCount()
+        {
+            ViewCount++;
+            ServiceManager.GetService<BlogsProvider>().IncreaseViewCount(Id);
+        }
+
         protected override int DataInsert()
         {
             return ServiceManager.GetService<BlogsProvider>().InsertPost(this);
@@ -66,12 +76,22 @@ namespace MyLife.Web.Blogs
         protected override void OnDataInserting()
         {
             base.OnDataInserting();
-            Slug = new NonUnicodeEncoding(Title).ToString(true).ToLowerInvariant().Trim('-');
+            Slug = ConvertTitleToSlug(Title);
             var post = GetPostBySlug(BlogId, Slug);
             if ((IsNew && post != null) || (post != null && post.Id != Id))
             {
                 throw new ArgumentException(Messages.DuplicatePost);
             }
+
+            if (PublishedDate != DateTime.MinValue)
+            {
+                CreatedDate = PublishedDate;
+            }
+        }
+
+        public static string ConvertTitleToSlug(string title)
+        {
+            return new NonUnicodeEncoding(title).ToString(true).ToLowerInvariant().Trim('-');
         }
 
         protected override void OnDataInserted()

@@ -272,6 +272,7 @@
     <Content Include="Icons\yahoo.png" />
     <Content Include="Images\avatar.png" />
     <Content Include="Scripts\colorpicker.js" />
+    <Content Include="Scripts\ajaxupload.3.2.js" />
     <Content Include="Scripts\Controllers\BaseController.js" />
     <Content Include="Scripts\Controllers\BlogsController.js" />
     <Content Include="Scripts\Controllers\FriendsController.js" />
@@ -382,7 +383,7 @@
     <Content Include="TinyMCE\tiny_mce.js" />
     <Content Include="TinyMCE\tiny_mce_gzip.js" />
     <Content Include="Views\Blogs\AddComment.ascx" />
-    <Content Include="Views\Blogs\ImportRss.aspx" />
+    <Content Include="Views\Blogs\Import.aspx" />
     <Content Include="Views\Blogs\Post.aspx" />
     <Content Include="Views\Blogs\PostEditor.aspx" />
     <Content Include="Views\Blogs\Posts.aspx" />

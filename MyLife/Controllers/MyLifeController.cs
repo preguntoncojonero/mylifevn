@@ -145,6 +145,7 @@ namespace MyLife.Controllers
                 var obj = new AjaxModel();
                 if (Membership.ValidateUser(username, password))
                 {
+                    HttpContext.User = new GenericPrincipal(new GenericIdentity(username), null);
                     FormsAuthentication.SetAuthCookie(username, false);
                     if (string.IsNullOrEmpty(returnUrl))
                     {

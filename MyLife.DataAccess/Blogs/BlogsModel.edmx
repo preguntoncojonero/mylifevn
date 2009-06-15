@@ -114,6 +114,7 @@
           <Property Name="Slug" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="CommentsEnabled" Type="bit" Nullable="false" />
+          <Property Name="ViewCount" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tblBlogs_PostsInCategories">
           <Key>
@@ -244,6 +245,7 @@
           <Property Name="Slug" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="CommentsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="ViewCount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Categories" Relationship="BlogsModel.tblBlogs_CategoriestblBlogs_Posts" FromRole="tblBlogs_Posts" ToRole="tblBlogs_Categories" />
           </EntityType>
         <Association Name="tblBlogs_CategoriestblBlogs_Posts">
@@ -348,6 +350,7 @@
                 <ScalarProperty Name="Slug" ColumnName="Slug" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="CommentsEnabled" ColumnName="CommentsEnabled" />
+                <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -109,14 +109,14 @@ namespace MyLife.Web.Blogs
 
         protected override void VerifyAuthorization()
         {
-            if (!MyLifeContext.Current.User.Identity.IsAuthenticated)
+            if (!User.Identity.IsAuthenticated)
             {
                 throw new SecurityException(Web.Messages.NotAuthorization);
             }
 
             if (!IsNew)
             {
-                if (!User.Identity.Name.Equals(CreatedBy) || !User.IsInRole(Constants.Roles.Administrators))
+                if (!User.Identity.Name.Equals(CreatedBy) && !User.IsInRole(Constants.Roles.Administrators))
                 {
                     throw new SecurityException(Web.Messages.NotAuthorization);
                 }
