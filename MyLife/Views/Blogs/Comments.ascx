@@ -6,6 +6,7 @@
     <ul>
     <% foreach(var comment in Model){ %>
         <li class="comment">
+            <a id="comment-<%= comment.Id %>"></a>
             <%= Html.Gravatar(comment.Email) %>
             <span class="post-comment-author">
                 <%= Html.Link(comment.Name, comment.Website, new { rel = "external nofollow" })%>

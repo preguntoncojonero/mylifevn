@@ -28,7 +28,7 @@
         <br /><br /><br />
         <div class="cssform" style="text-align: left">
             <h2>Chuyển đổi từ Yahoo 360 Archive</h2>
-            <p>Bạn hãy upload file Yahoo 360 Archive để chuyển đổi thành bài viết. Nếu bạn chưa biết cách tạo file này, hãy click <a href="http://www.mylifevn.com/xox/blog">vào đây</a></p>
+            <p>Bạn hãy upload file Yahoo 360 Archive để chuyển đổi thành bài viết. Nếu bạn chưa biết cách tạo file này, hãy click <a href="http://www.mylifevn.com/xox/blog/post/chuyen-nha-tu-yahoo-360-blog">vào đây</a></p>
             <div style="text-align: center">
                 <a href="javascript:void(0)" id="btnYahoo360Archive" class="button mini-icons upload">Upload Yahoo 360 Archive</a>
             </div>

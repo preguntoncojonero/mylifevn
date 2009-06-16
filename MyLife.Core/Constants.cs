@@ -71,7 +71,6 @@
                 public const string Comment = "Comment";
                 public const string Description = "Description";
                 public const string Header = "Header";
-                public const string IsPostList = "IsPostList";
                 public const string Name = "Name";
                 public const string Posts = "Posts";
                 public const string RecentComments = "RecentComments";

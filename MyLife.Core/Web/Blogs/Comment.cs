@@ -40,6 +40,8 @@ namespace MyLife.Web.Blogs
 
         public int PostId { get; set; }
 
+        public string PostSlug { get; set; }
+
         public int BlogId { get; set; }
 
         [RegularExpression(Constants.Regulars.Website, ErrorMessage = "Địa chỉ trang web của bạn không hợp lệ")]
@@ -47,7 +49,7 @@ namespace MyLife.Web.Blogs
 
         public string RelativeUrl
         {
-            get { return string.Format("/{0}/blog/permalink/{1}#comment-{2}", CreatedBy, PostId, Id); }
+            get { return string.Format("/{0}/blog/post/{1}#comment-{2}", CreatedBy, PostSlug, Id); }
         }
 
         protected override int DataInsert()

@@ -7,17 +7,14 @@
         <span class="date"><%= Model.CreatedDate.ToString(MyLifeContext.Settings.LongDateFormat)%></span>
     </div>
     <div class="post-content">
-        <%= Html.If((bool)ViewData[Constants.ViewData.Blogs.IsPostList], html => Model.ShortContent)
-        .Else(html => Model.Content) %>
+        <%= Model.Content %>
     </div>
     
-    <% if(!(bool) ViewData[Constants.ViewData.Blogs.IsPostList]){ %>
-        <div class="post-meta">
-            <span class="post-categories">
-                <%= Model.Categories.FormatAsLinks(item => item.Name, item => item.RelativeUrl, ", ") %>
-            </span>
-        </div>
-        <% Html.RenderPartial("Comments", Model.Comments); %>
-        <% Html.RenderPartialIf(ViewData[Constants.ViewData.Blogs.Comment] != null, "AddComment", ViewData[Constants.ViewData.Blogs.Comment]); %>
-    <% } %>    
+    <div class="post-meta">
+        <span class="post-categories">
+            <%= Model.Categories.FormatAsLinks(item => item.Name, item => item.RelativeUrl, ", ") %>
+        </span>
+    </div>
+    
+    <asp:TextBox runat="server"></asp:TextBox>
 </div>

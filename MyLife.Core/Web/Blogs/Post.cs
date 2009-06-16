@@ -34,9 +34,6 @@ namespace MyLife.Web.Blogs
         [ScriptIgnore]
         public string Content { get; set; }
 
-        [ScriptIgnore]
-        public string ShortContent { get; set; }
-
         public bool Published { get; set; }
 
         public DateTime PublishedDate { get; set; }
@@ -50,6 +47,8 @@ namespace MyLife.Web.Blogs
         public bool CommentsEnabled { get; set; }
 
         public int ViewCount { get; set; }
+
+        public bool Sticky { get; set; }
 
         [ScriptIgnore]
         public List<Comment> Comments { get; private set; }

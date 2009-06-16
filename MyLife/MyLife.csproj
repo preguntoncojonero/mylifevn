@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <MvcBuildViews>true</MvcBuildViews>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -280,6 +281,26 @@
     <Content Include="Scripts\Controllers\MyLifeController.js" />
     <Content Include="Scripts\ControlsToolkit.js" />
     <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\ExtJs\button.js" />
+    <Content Include="Scripts\ExtJs\color-palette.js" />
+    <Content Include="Scripts\ExtJs\data.js" />
+    <Content Include="Scripts\ExtJs\date.js" />
+    <Content Include="Scripts\ExtJs\datepicker.js" />
+    <Content Include="Scripts\ExtJs\dialogs.js" />
+    <Content Include="Scripts\ExtJs\dragdrop.js" />
+    <Content Include="Scripts\ExtJs\edit-grid.js" />
+    <Content Include="Scripts\ExtJs\ext-core.js" />
+    <Content Include="Scripts\ExtJs\form.js" />
+    <Content Include="Scripts\ExtJs\grid.js" />
+    <Content Include="Scripts\ExtJs\menus.js" />
+    <Content Include="Scripts\ExtJs\qtips.js" />
+    <Content Include="Scripts\ExtJs\resizable.js" />
+    <Content Include="Scripts\ExtJs\splitbar.js" />
+    <Content Include="Scripts\ExtJs\tabs.js" />
+    <Content Include="Scripts\ExtJs\toolbar.js" />
+    <Content Include="Scripts\ExtJs\tree.js" />
+    <Content Include="Scripts\ExtJs\util.js" />
+    <Content Include="Scripts\ExtJs\widget-core.js" />
     <Content Include="Scripts\Format.js" />
     <Content Include="Scripts\jquery.autogrow.js" />
     <Content Include="Scripts\jquery.contextMenu.js" />
