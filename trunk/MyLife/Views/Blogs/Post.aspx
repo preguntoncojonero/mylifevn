@@ -10,4 +10,6 @@
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <% Html.RenderPartial("PostDetails", Model); %>
+    <% Html.RenderPartial("Comments", Model.Comments); %>
+    <% Html.RenderPartialIf(ViewData[Constants.ViewData.Blogs.Comment] != null, "AddComment", ViewData[Constants.ViewData.Blogs.Comment]); %>
 </asp:Content>

@@ -86,6 +86,7 @@
           <Property Name="IP" Type="nvarchar" Nullable="false" MaxLength="25" />
           <Property Name="IsApproved" Type="bit" Nullable="false" />
           <Property Name="PostId" Type="int" Nullable="false" />
+          <Property Name="PostSlug" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="BlogId" Type="int" Nullable="false" />
           <Property Name="Website" Type="nvarchar" MaxLength="255" />
         </EntityType>
@@ -104,7 +105,6 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="BlogId" Type="int" Nullable="false" />
-          <Property Name="ShortContent" Type="nvarchar" MaxLength="1000" />
           <Property Name="Content" Type="ntext" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="255" />
@@ -115,6 +115,7 @@
           <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="255" />
           <Property Name="CommentsEnabled" Type="bit" Nullable="false" />
           <Property Name="ViewCount" Type="int" Nullable="false" />
+          <Property Name="Sticky" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tblBlogs_PostsInCategories">
           <Key>
@@ -226,6 +227,7 @@
           <Property Name="IP" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
           <Property Name="IsApproved" Type="Boolean" Nullable="false" />
           <Property Name="PostId" Type="Int32" Nullable="false" />
+          <Property Name="PostSlug" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="BlogId" Type="Int32" Nullable="false" />
           <Property Name="Website" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
           </EntityType>
@@ -236,7 +238,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="BlogId" Type="Int32" Nullable="false" />
           <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="ShortContent" Type="String" Nullable="true" MaxLength="1000" Unicode="true" FixedLength="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Published" Type="Boolean" Nullable="false" />
@@ -246,6 +247,7 @@
           <Property Name="Title" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="CommentsEnabled" Type="Boolean" Nullable="false" />
           <Property Name="ViewCount" Type="Int32" Nullable="false" />
+          <Property Name="Sticky" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Categories" Relationship="BlogsModel.tblBlogs_CategoriestblBlogs_Posts" FromRole="tblBlogs_Posts" ToRole="tblBlogs_Categories" />
           </EntityType>
         <Association Name="tblBlogs_CategoriestblBlogs_Posts">
@@ -330,6 +332,7 @@
                 <ScalarProperty Name="IP" ColumnName="IP" />
                 <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
                 <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="PostSlug" ColumnName="PostSlug" />
                 <ScalarProperty Name="BlogId" ColumnName="BlogId" />
                 <ScalarProperty Name="Website" ColumnName="Website" />
               </MappingFragment>
@@ -341,7 +344,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="BlogId" ColumnName="BlogId" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="ShortContent" ColumnName="ShortContent" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="Published" ColumnName="Published" />
@@ -351,6 +353,7 @@
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="CommentsEnabled" ColumnName="CommentsEnabled" />
                 <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+                <ScalarProperty Name="Sticky" ColumnName="Sticky" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -119,7 +119,6 @@ namespace MyLife.Controllers
 
             ViewData[Constants.ViewData.Title] = string.Format("{0}'s blog", blog.CreatedBy);
             ViewData[Constants.ViewData.Blogs.Header] = "Các bài viết mới nhất";
-            ViewData[Constants.ViewData.Blogs.IsPostList] = true;
 
             ViewData[Constants.ViewData.PageNavigator.IndexOfPage] = indexOfPage;
             ViewData[Constants.ViewData.PageNavigator.TotalPages] = Utils.CalcTotalPages(total, blog.PostsPerPage);
@@ -146,7 +145,6 @@ namespace MyLife.Controllers
             post.IncreaseViewCount();
 
             ViewData[Constants.ViewData.Title] = string.Format("{0} - {1}'s blog", post.Title, post.CreatedBy);
-            ViewData[Constants.ViewData.Blogs.IsPostList] = false;
             CommonTasks(blog);
 
             if (Comment.VerifyCommentsEnabled(blog, post, false))
@@ -185,7 +183,6 @@ namespace MyLife.Controllers
             var posts = Post.GetPostsOfCategory(category.Id, indexOfPage, blog.PostsPerPage, out total);
 
             ViewData[Constants.ViewData.Title] = string.Format("{0}'s blog - {1}", blog.CreatedBy, category.Name);
-            ViewData[Constants.ViewData.Blogs.IsPostList] = true;
             ViewData[Constants.ViewData.Blogs.Header] = "Chủ đề: " + category.Name;
 
             ViewData[Constants.ViewData.PageNavigator.IndexOfPage] = indexOfPage;
@@ -447,7 +444,6 @@ namespace MyLife.Controllers
 
             ViewData[Constants.ViewData.Title] = string.Format("{0}'s blog", blog.CreatedBy);
             ViewData[Constants.ViewData.Blogs.Header] = "Kết quả tìm kiếm cho từ khóa: " + keyword;
-            ViewData[Constants.ViewData.Blogs.IsPostList] = true;
 
             ViewData[Constants.ViewData.PageNavigator.IndexOfPage] = 0;
             ViewData[Constants.ViewData.PageNavigator.TotalPages] = 1;

@@ -12,7 +12,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("BlogsModel", "tblBlogs_CategoriestblBlogs_Posts", "tblBlogs_Categories", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MyLife.DataAccess.Blogs.tblBlogs_Categories), "tblBlogs_Posts", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(MyLife.DataAccess.Blogs.tblBlogs_Posts))]
 
 // Original file name:
-// Generation date: 6/15/2009 4:27:04 PM
+// Generation date: 6/16/2009 10:05:34 AM
 namespace MyLife.DataAccess.Blogs
 {
     
@@ -1147,8 +1147,9 @@ namespace MyLife.DataAccess.Blogs
         /// <param name="iP">Initial value of IP.</param>
         /// <param name="isApproved">Initial value of IsApproved.</param>
         /// <param name="postId">Initial value of PostId.</param>
+        /// <param name="postSlug">Initial value of PostSlug.</param>
         /// <param name="blogId">Initial value of BlogId.</param>
-        public static tblBlogs_Comments CreatetblBlogs_Comments(int id, global::System.DateTime createdDate, string createdBy, global::System.DateTime modifiedDate, string modifiedBy, string name, string content, string email, string iP, bool isApproved, int postId, int blogId)
+        public static tblBlogs_Comments CreatetblBlogs_Comments(int id, global::System.DateTime createdDate, string createdBy, global::System.DateTime modifiedDate, string modifiedBy, string name, string content, string email, string iP, bool isApproved, int postId, string postSlug, int blogId)
         {
             tblBlogs_Comments tblBlogs_Comments = new tblBlogs_Comments();
             tblBlogs_Comments.Id = id;
@@ -1162,6 +1163,7 @@ namespace MyLife.DataAccess.Blogs
             tblBlogs_Comments.IP = iP;
             tblBlogs_Comments.IsApproved = isApproved;
             tblBlogs_Comments.PostId = postId;
+            tblBlogs_Comments.PostSlug = postSlug;
             tblBlogs_Comments.BlogId = blogId;
             return tblBlogs_Comments;
         }
@@ -1419,6 +1421,29 @@ namespace MyLife.DataAccess.Blogs
         partial void OnPostIdChanging(int value);
         partial void OnPostIdChanged();
         /// <summary>
+        /// There are no comments for Property PostSlug in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public string PostSlug
+        {
+            get
+            {
+                return this._PostSlug;
+            }
+            set
+            {
+                this.OnPostSlugChanging(value);
+                this.ReportPropertyChanging("PostSlug");
+                this._PostSlug = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this.ReportPropertyChanged("PostSlug");
+                this.OnPostSlugChanged();
+            }
+        }
+        private string _PostSlug;
+        partial void OnPostSlugChanging(string value);
+        partial void OnPostSlugChanged();
+        /// <summary>
         /// There are no comments for Property BlogId in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
@@ -1491,7 +1516,8 @@ namespace MyLife.DataAccess.Blogs
         /// <param name="title">Initial value of Title.</param>
         /// <param name="commentsEnabled">Initial value of CommentsEnabled.</param>
         /// <param name="viewCount">Initial value of ViewCount.</param>
-        public static tblBlogs_Posts CreatetblBlogs_Posts(int id, int blogId, string content, global::System.DateTime createdDate, string createdBy, bool published, global::System.DateTime modifiedDate, string modifiedBy, string slug, string title, bool commentsEnabled, int viewCount)
+        /// <param name="sticky">Initial value of Sticky.</param>
+        public static tblBlogs_Posts CreatetblBlogs_Posts(int id, int blogId, string content, global::System.DateTime createdDate, string createdBy, bool published, global::System.DateTime modifiedDate, string modifiedBy, string slug, string title, bool commentsEnabled, int viewCount, bool sticky)
         {
             tblBlogs_Posts tblBlogs_Posts = new tblBlogs_Posts();
             tblBlogs_Posts.Id = id;
@@ -1506,6 +1532,7 @@ namespace MyLife.DataAccess.Blogs
             tblBlogs_Posts.Title = title;
             tblBlogs_Posts.CommentsEnabled = commentsEnabled;
             tblBlogs_Posts.ViewCount = viewCount;
+            tblBlogs_Posts.Sticky = sticky;
             return tblBlogs_Posts;
         }
         /// <summary>
@@ -1577,29 +1604,6 @@ namespace MyLife.DataAccess.Blogs
         private string _Content;
         partial void OnContentChanging(string value);
         partial void OnContentChanged();
-        /// <summary>
-        /// There are no comments for Property ShortContent in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShortContent
-        {
-            get
-            {
-                return this._ShortContent;
-            }
-            set
-            {
-                this.OnShortContentChanging(value);
-                this.ReportPropertyChanging("ShortContent");
-                this._ShortContent = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("ShortContent");
-                this.OnShortContentChanged();
-            }
-        }
-        private string _ShortContent;
-        partial void OnShortContentChanging(string value);
-        partial void OnShortContentChanged();
         /// <summary>
         /// There are no comments for Property CreatedDate in the schema.
         /// </summary>
@@ -1807,6 +1811,29 @@ namespace MyLife.DataAccess.Blogs
         private int _ViewCount;
         partial void OnViewCountChanging(int value);
         partial void OnViewCountChanged();
+        /// <summary>
+        /// There are no comments for Property Sticky in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Sticky
+        {
+            get
+            {
+                return this._Sticky;
+            }
+            set
+            {
+                this.OnStickyChanging(value);
+                this.ReportPropertyChanging("Sticky");
+                this._Sticky = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("Sticky");
+                this.OnStickyChanged();
+            }
+        }
+        private bool _Sticky;
+        partial void OnStickyChanging(bool value);
+        partial void OnStickyChanged();
         /// <summary>
         /// There are no comments for Categories in the schema.
         /// </summary>
